@@ -1,0 +1,92 @@
+.p-case-study {
+    background: color-get(element, bg);
+    padding: sp(-60)*3 0;
+}
+
+.p-case-study__nav {
+    padding: sp(-20) 0;
+    
+    top: initial; bottom: 0;
+    background: color-get(element, bg);
+    text-align: right;
+    overflow: hidden;
+
+    @include iota-breakpoint(sm) { 
+        padding-bottom: sp(-24);
+        top: 0; bottom: initial; 
+        text-align: center;
+    }
+    
+    h6 { @include ms-respond(font-size, 0); }
+
+    // TODO edit into proper classes
+    a { transition: transform 0.3s; }
+    ul { 
+        position: absolute;
+        top: 100%;
+        left: 0; right: 0;
+    }
+    &--down {
+        a { 
+            transition: transform 0.3s;
+            transform: translateY(-2.8rem); 
+        }
+    }
+    
+    transition: all 0.3s;
+    opacity: 1;
+    transform: translateY(0);
+    &--hidden {
+        opacity: 0;
+        transform: translateY(#{sp(-12)});
+        @include iota-breakpoint(sm) { 
+            transform: translateY(-#{sp(-12)});
+        }
+    }
+}
+
+.p-case-study__demo {
+    display: inline-block;
+    margin: auto;
+
+    &, * {
+        position: relative;
+        z-index: 1;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 1rem; bottom: -2rem;
+        left: -3rem; right: -3rem;
+        z-index: -1;
+
+        background: repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent sp(-12),
+            color-get(gray) sp(-12),
+            color-get(gray) sp(-20)
+        );
+        opacity: 0.5;
+    }
+}
+
+.p-case-study__content {
+    position: relative;
+    z-index: 1;
+    
+    @for $i from 1 through 6 {
+        h#{$i} { 
+            @extend h6;
+            @extend .o-container, .o-container--content;
+            margin-top: sp(-40);
+            & + * { margin-top: sp(-16); }
+        }
+    }
+
+    figure { @extend .o-container, .o-container--figure; }
+
+    & > * { @extend .o-container, .o-container--content; }
+    * + * { margin: sp(-40) auto; }
+}

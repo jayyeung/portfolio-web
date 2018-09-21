@@ -1,0 +1,143 @@
+.p-homepage__hero {
+    background: #E2E2E2;
+    padding: sp(-40)*3 0 70vh;
+    z-index: -100;
+
+    @include iota-breakpoint(md) {
+        padding: sp(-60)*3 0 90vh;
+    }
+
+    position: relative;
+    &::after {
+        content: '';
+        height: 50%;
+        position: absolute;
+        bottom: 0;
+        left: 0; right: 0;
+
+        // https://larsenwork.com/easing-gradients/
+        background: linear-gradient(
+            to bottom,
+            hsla(0, 0%, 100%, 0) 0%,
+            hsla(0, 0%, 100%, 0.013) 11%,
+            hsla(0, 0%, 100%, 0.049) 20.2%,
+            hsla(0, 0%, 100%, 0.104) 27.8%,
+            hsla(0, 0%, 100%, 0.175) 34.1%,
+            hsla(0, 0%, 100%, 0.259) 39.5%,
+            hsla(0, 0%, 100%, 0.352) 44.1%,
+            hsla(0, 0%, 100%, 0.45) 48.3%,
+            hsla(0, 0%, 100%, 0.55) 52.4%,
+            hsla(0, 0%, 100%, 0.648) 56.6%,
+            hsla(0, 0%, 100%, 0.741) 61.2%,
+            hsla(0, 0%, 100%, 0.825) 66.5%,
+            hsla(0, 0%, 100%, 0.896) 72.7%,
+            hsla(0, 0%, 100%, 0.951) 80.2%,
+            hsla(0, 0%, 100%, 0.987) 89.2%,
+            hsl(0, 0%, 100%) 100%
+        );
+    }
+}
+
+.p-homepage__title {
+    margin-top: -#{sp(-60)*5};
+}
+
+.p-homepage__skill {
+    &::after {
+        content: '';
+        display: inline-block;
+        flex: 1;
+        min-width: 1rem;
+        height: 3px;
+        margin: 0 sp(-20);
+        background: color-get(gray);
+    }
+}
+
+.p-homepage__list {
+    &, ul {
+        @extend .o-list;
+        list-style: none;
+    }
+
+    & > li { 
+        margin-bottom: sp(-4); 
+        align-items: flex-start;
+        font-weight: 500;
+    }
+
+    li, span { font-family: $font-support-2; }
+
+    span { 
+        display: flex;
+        flex: 1;
+        align-items: center;
+        margin-bottom: sp(-4);
+    }
+
+    ul {
+        flex: 1.5;
+        display: flex;
+        flex-wrap: wrap;
+
+        li {
+            margin: sp(-4) sp(-8); 
+            flex: none; 
+            color: color-get(gray, dark);
+        }
+    }
+
+    &-sub li { 
+        &::before {
+            content: '';
+            display: inline-block;
+            width: $baseline*2;
+            height: $baseline*2;
+            margin-right: sp(-16);
+
+            border-radius: sp(-4);
+            background: #3C70EB;
+            vertical-align: middle;
+        }
+    }
+}
+
+.p-homepage__work {   
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        top: sp(-60)*2; bottom: 0;
+        left: 0; right: 0;
+        background: color-get(gray, light);
+        z-index: -100;
+    }
+
+    &-item {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-shadow: 0 0 12px rgba(black, 0.1);
+        background: color-get(element, card);
+        img { width: 100%; }
+    }
+
+    &-desc {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        ul { 
+            flex: 1; 
+            display: flex; 
+            align-items: flex-end;
+        }
+    }
+
+    &-type {
+        @extend .c-label, .c-label--alt;
+        position: absolute;
+        bottom: sp(-24);
+        left: sp(-32);
+        background: color-get(black);
+    }
+}

@@ -1,0 +1,41 @@
+*, *::before, *::after {
+    // font smoothing
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    @include ms-respond(font-size, 0);
+    font-family: $font-body;
+    line-height: 1.5;
+    color: color-get(black);
+}
+
+@for $i from 1 through 6 {
+    h#{$i} {
+        font-family: $font-head;
+        letter-spacing: -0.025em;
+        
+        @include ms-respond(font-size, 6-$i+1);
+        @include iota-breakpoint(md) {
+            @include ms-respond(font-size, 7-$i+1);
+        }
+    }
+}
+
+p {
+    color: color-get(element, body);
+    line-height: 1.75;
+
+    a {
+        display: inline;
+        @extend .c-link;
+    }
+}
+
+a { 
+    text-decoration: none;
+    color: inherit;
+}
+
+strong { color: color-get(black); }

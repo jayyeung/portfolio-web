@@ -1,0 +1,22 @@
+.c-label {
+    @include ms-respond(font-size, 0);
+    font-family: $font-support-1;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: color-get(black);
+}
+
+.c-label--small {
+    @include ms-respond(font-size, -1);
+}
+
+.c-label--large {
+    @include ms-respond(font-size, 1);
+}
+
+.c-label--alt {
+    padding: sp(-4) sp(-12);
+    background: color-get(brand, main);
+    color: white;
+}

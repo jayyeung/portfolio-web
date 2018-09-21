@@ -1,0 +1,9 @@
+.c-social-media {
+    @extend .o-list, .o-list--inline;
+
+    li { @extend .o-list__item; }
+    span {
+        @include ms-respond(font-size, 2);
+        color: color-get(gray, dark);
+    }
+}

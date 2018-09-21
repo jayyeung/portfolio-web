@@ -1,0 +1,138 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+#container {
+    width: 100%;
+    overflow: hidden;
+    background: color-get(element, bg);
+    
+    @include iota-breakpoint(md) { margin-bottom: 34rem; }
+    
+    position: relative;
+    z-index: 100;
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0; bottom: 0;
+        left: 0; right: 0;
+        z-index: -1000;
+    }
+}
+
+nav {
+    padding-top: sp(-16);
+    padding-bottom: sp(-16);
+    position: fixed;
+    top: 0;
+    left: 0; right: 0;
+    z-index: 9999;
+
+    pointer-events: none;
+    a { pointer-events: auto; }
+
+    transition: opacity 0.3s;
+    opacity: 0.7;
+    &:hover { opacity: 1; }
+}
+
+footer {
+    background: color-get(black);
+    @include iota-breakpoint(md) { 
+        position: fixed;
+        bottom: 0;
+        left: 0; right: 0;
+        z-index: -100;
+    }
+
+    &::after {
+        content: '';
+        @extend footer;
+        top: 0;
+    }
+}
+
+input {
+    @include ms-respond(font-size, 1);
+    @extend .c-subhead;
+    width: 100%;
+
+    outline: none;
+    background: none;
+    border: none;
+    border-bottom: 1px solid color-get(gray);
+    color: white;
+
+    transition: opacity 0.3s;
+    opacity: 0.5;
+    &:hover, &:focus {
+        opacity: 1;
+    }
+}
+
+textarea {
+    @extend input;
+    font-family: $font-body !important;
+    @include ms-respond(font-size, 0);
+    height: 5rem;
+    margin-top: sp(-4);
+    resize: none;
+}
+
+label {
+    @extend .c-label;
+    color: color-get(gray) !important;
+    display: block;
+}
+
+button {
+    @extend .c-link;
+    @include ms-respond(font-size, 0);
+    font-family: $font-support-2;
+
+    outline: none;
+    cursor: pointer;
+
+    background: none;
+    border: none;
+    padding: 0;
+}
+
+code {
+    font-family: $font-support-2; 
+    padding: sp(-4) sp(-8);
+    background: color-get(gray, light);
+    border: 1px solid rgba(color-get(gray), 0.7);
+}
+
+hr {
+    width: 100%;
+    height: $baseline/2;
+    border: none;
+    background: color-get(gray, light);
+}
+
+figure {
+    padding: sp(-40) 0;
+    text-align: center;
+
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        left: -100vw; right: -100vw;
+        top: 0; bottom: 0;
+        z-index: -1;
+
+        background: color-get(gray, light);
+    }
+
+    figcaption { margin: sp(-20) 0 0 !important; }
+}
+
+figcaption {
+    @include ms-respond(font-size, -1);
+    color: black;
+    font-weight: bold;
+    opacity: 0.6;
+}

@@ -1,0 +1,33 @@
+// Type
+$type-base: 14px;
+$type-ratio: 1.12;
+
+// Font family
+$font-head: ('Mark Pro');
+$font-subtitle: ('Sentinel');
+$font-body: ('PT Serif');
+$font-support-1: ('Rajdhani');
+$font-support-2: ('Roboto Mono');
+
+// Modular Scale
+$modularscale: (
+    375px: (
+        base: $type-base,
+        ratio: $type-ratio,
+    ),
+
+    1366px: (
+        base: 16px,
+        ratio: 1.15
+    ),
+
+    1800px: (
+        base: 19px,
+        ratio: 1.15
+    )
+);
+
+@import url('https://fonts.googleapis.com/css?family=PT+Serif:400,700|Rajdhani:700|Roboto+Mono:400,500');
+@import url('https://i.icomoon.io/public/temp/718118ba0a/UntitledProject/style.css');
+@import url('../static/fonts/fonts.css');
+@import 'node_modules/modularscale-sass/stylesheets/modularscale';

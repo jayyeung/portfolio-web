@@ -4,7 +4,11 @@
  * Type: Map
  */
 
-$iota-utils-opacity-sizes: ();
+$iota-utils-opacity-sizes: (
+    25: 0.25,
+    50: 0.5,
+    70: 0.7
+);
 
 
 /**

@@ -5,7 +5,7 @@
  * Type: Number / Map
  */
 
-$iota-utils-padding-default: $iota-global-gutter-default;
+$iota-utils-padding-default: $baseline;
 
 
 /**
@@ -14,7 +14,7 @@ $iota-utils-padding-default: $iota-global-gutter-default;
  * Type: Map
  */
 
-$iota-utils-padding-extra: ();
+$iota-utils-padding-extra: $spacing;
 
 
 /**
@@ -23,7 +23,7 @@ $iota-utils-padding-extra: ();
  * Type: Boolean
  */
 
-$iota-utils-padding-res: false;
+$iota-utils-padding-res: true;
 
 
 /**

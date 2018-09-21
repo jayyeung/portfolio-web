@@ -1,0 +1,38 @@
+@function color-get($palette, $tone:$palette) {
+    @return map-get(map-get($colors, $palette), $tone);
+}
+
+$colors: (
+    brand: (
+        main: #3C70EB,
+    ),
+
+    element: (
+        body: #626262,
+        card: white,
+        bg: white
+    ),
+
+    black: (
+        light: #303030,
+        black: #202020
+    ),
+
+    gray: (
+        light: #F3F5F7,
+        gray: #D2DAE2,
+        dark: #7C8C9B
+    ),
+
+    white: ( white: white )
+);
+
+// Expand colors for iotacss u-color generator
+$colors-mapped: ();
+@each $color, $tones in $colors {
+    @each $tone, $value in $tones {
+        $key: $color;
+        @if ($tone != $color) { $key: $key+'-'+$tone; }
+        $colors-mapped: map-merge($colors-mapped, ($key: $value));
+    }
+}

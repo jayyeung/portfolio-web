@@ -42,7 +42,9 @@ $iota-objs-grid-gutter-default: $iota-global-gutter-default;
  * Type: Map
  */
 
-$iota-objs-grid-gutter-extra: ();
+$iota-objs-grid-gutter-extra: (
+    wide: 4rem
+);
 
 
 /**

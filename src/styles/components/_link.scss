@@ -1,0 +1,45 @@
+.c-link {
+    display: inline-block;
+    text-decoration: none;
+
+    color: color-get(brand, main);
+
+    position: relative;
+    padding-bottom: sp(-4);
+    &::after {
+        content: '';
+        width: 100%;
+        height: sp(-4);
+        background: currentColor;
+        opacity: 0.5;
+        
+        position: absolute;
+        left: 0; right: 0;
+        bottom: 0;
+    }
+
+    &::before { 
+        @extend .c-link::after; 
+        height: sp(-12);
+        
+        opacity: 0;
+        bottom: 30%;
+
+        transform: scaleY(0.4);
+        transition: all 0.3s;
+    }
+
+    &:hover::before {
+        opacity: 0.175;
+        transform: scaleY(1);
+    }
+}
+
+.c-link--alt {
+    font-family: $font-support-2;
+    font-weight: 500;
+}
+
+.c-link--small {
+    @include ms-respond(font-size, -1);
+}
