@@ -26,11 +26,7 @@
 p {
     color: color-get(element, body);
     line-height: 1.75;
-
-    a {
-        display: inline;
-        @extend .c-link;
-    }
+    a { @extend .c-link, .c-link--wrap; }
 }
 
 a { 

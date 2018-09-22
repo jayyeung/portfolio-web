@@ -35,6 +35,24 @@
     }
 }
 
+.c-link--wrap {
+    display: inline;
+    &::after, &::before { display: none; }
+
+    // have background able to wrap on line break
+    // Downside: cannot use currentColor & no animation
+    border-bottom: sp(-4) solid rgba(color-get(brand, main), 0.5);
+    background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 30%,
+        rgba(color-get(brand, main), 0.125) 30%,
+        rgba(color-get(brand, main), 0.125) 70%,
+        transparent 70%,
+        transparent 100%
+    );
+}
+
 .c-link--alt {
     font-family: $font-support-2;
     font-weight: 500;
