@@ -1,5 +1,7 @@
-.c-social-media {
+.c-social-media-links {
     @extend .o-list, .o-list--inline;
+    display: inline-block;
+    vertical-align: middle;
 
     li { @extend .o-list__item; }
     span {

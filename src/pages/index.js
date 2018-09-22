@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
+import { SocialMediaLinks } from '../components/partials/social-media';
+
 const IndexPage = () => (
   <div>
     <div className='p-homepage__hero'>
@@ -22,17 +24,13 @@ const IndexPage = () => (
 
     <div className='u-inline-block u-mv-8'></div>
 
-    <div className='o-container o-container--content'>
-      <p className='u-text-center'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dolorem ab odio aperiam cumque deserunt excepturi sequi sed culpa. Quam.</p>
-      <ul className='c-social-media u-mt-20 u-text-center'>
-        <li><span className='c-icon-github'></span></li>
-        <li><span className='c-icon-codepen'></span></li>
-        <li><span className='c-icon-behance'></span></li>
-      </ul>
+    <div className='o-container o-container--content u-text-center'>
+      <p className='u-mb-24'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam dolorem ab odio aperiam cumque deserunt excepturi sequi sed culpa. Quam.</p>
+      <SocialMediaLinks/> 
     </div>
 
     <div className='u-inline-block u-mb-12 u-mv-40@md'></div>
-
+  
     <hr/>
 
     <div className='u-inline-block u-mb-12 u-mv-40@sm'></div>
