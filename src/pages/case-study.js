@@ -80,7 +80,7 @@ class CaseStudy extends Component {
                     <p>Whenever we run the <code>wagTail()</code> animation is executed, it is pretty good</p>
                     <figure>
                         <img src='https://gastrofork.ca/wp-content/uploads/2018/08/radicle-juice-1280x860.jpg'/>
-                        <figcaption>The image above describes the two tweens used to create the "curling" effect for Fluffy.</figcaption>
+                        <figcaption>The image above depicts two tweens used to create the "curling" effect for Fluffy.</figcaption>
                     </figure>
             
                     <h1>Interesting Points of Implementation</h1>

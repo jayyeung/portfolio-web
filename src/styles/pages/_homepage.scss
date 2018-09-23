@@ -7,6 +7,9 @@
         padding: sp(-60)*3 0 90vh;
     }
 
+    pointer-events: none;
+    a { pointer-events: auto; }
+
     position: relative;
     &::after {
         content: '';
