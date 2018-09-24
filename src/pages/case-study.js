@@ -1,5 +1,13 @@
-import React, { Component } from 'react'
-import Link from 'gatsby-link'
+import React, { Component } from 'react';
+import Link from 'gatsby-link';
+
+import posed from 'react-pose';
+
+const Section = posed.section({
+  enter: { staggerChildren: 50 },
+  exit: { staggerChildren: 20, staggerDirection: -1 },
+});
+
 
 class CaseStudy extends Component {  
     constructor(props) {
@@ -36,7 +44,7 @@ class CaseStudy extends Component {
 
     render() {
         return (
-            <div className='p-case-study'>
+            <Section className='p-case-study'>
                 {/* CONTENT NAV */}
                 <nav className='p-case-study__nav p-case-study__nav--hidden p-case-study__nav--down' ref={(e) => {this.nav = e}}>
                     <div className='o-container o-container--wide u-text-center'>
@@ -85,7 +93,7 @@ class CaseStudy extends Component {
             
                     <h1>Interesting Points of Implementation</h1>
                 </div>
-            </div>
+            </Section>
         );
     }
 };
