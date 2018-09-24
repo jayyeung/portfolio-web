@@ -1,0 +1,21 @@
+.p-404 {
+    text-align: center;
+    padding: sp(-60)*4 0 sp(-60)*2;
+
+    @include iota-breakpoint(md) { 
+        padding: sp(-60)*6 0 sp(-60)*4; 
+    }
+    @include iota-breakpoint(xl) { 
+        padding: sp(-60)*8 sp(-60)*6; 
+    }
+}
+
+.p-404__num {
+    @extend h1;
+    width: 80vw;
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    z-index: -1;
+}
