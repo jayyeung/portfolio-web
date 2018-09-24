@@ -5,11 +5,11 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 import '../styles/main.scss';
 
-const Layout = ({ children, data }) => (
+const Layout = ({ children, locaiton }) => (
   <div>
     <Header />
     <div id='container'>
-      {children()}
+      {children}
     </div>
     <Footer />
   </div>

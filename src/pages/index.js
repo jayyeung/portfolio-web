@@ -1,10 +1,11 @@
 import React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby';
 
+import Layout from '../layouts';
 import { SocialMediaLinks } from '../components/partials/social-media';
 
 const IndexPage = () => (
-  <div>
+  <Layout>
     <div className='p-homepage__hero'>
       <div className='o-container o-container--title u-text-center'>
         <h1 className='u-mb-20'>
@@ -147,14 +148,12 @@ const IndexPage = () => (
               </div>
             </div>
           </div>
-
-          
         </div>
       </div>
 
       <div className='u-inline-block u-mv-40'></div>
     </div>
-  </div>
+  </Layout>
 )
 
 export default IndexPage
