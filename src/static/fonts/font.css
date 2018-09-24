@@ -33,12 +33,15 @@
 [class^="c-icon-"], [class*=" c-icon-"] {
     font-family: 'jyeung-icons' !important;
     speak: none;
+    font-size: 1.4em;
     font-style: normal;
     font-weight: normal;
     font-variant: normal;
     text-transform: none;
     line-height: 1;
 }
+
+.c-icon-arrow { font-size: 0.8em !important; }
 
 .c-icon-github:before { content: "\f09b";}
 .c-icon-behance:before { content: "\f1b4"; }

@@ -14,28 +14,28 @@ class Footer extends Component {
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, deserunt non. Ratione magnam est dicta obcaecati eveniet laborum sapiente nemo.</p>
                 <div className='u-inline-block u-mv-32'></div>
                 <div className='u-color-gray c-label'>E-mail me at</div>
-                <a href='#' className='c-link u-color-white'><h4 className='c-subhead'>contact@jasonyeung.me</h4></a>
+                <a href='mailto:contact@jasonyeung.me' className='c-link u-color-white'><h4 className='c-subhead'>contact@jasonyeung.me</h4></a>
               </div>
 
               <div className='o-grid__col u-7/12@md'>
                 <p className='u-color-gray u-mb-32'>Here's a contact form for conveience.</p>
-                <form>
-                <div className='o-media o-media--res u-mb-28'>
-                    <div className='o-media__fluid u-mr-40 u-mb-20'>
-                    <label>Name*</label>
-                    <input type='text' placeholder='Jason Yeung'></input>
-                    </div>
+                <form id='contact-form'>
+                  <div className='o-media o-media--res u-mb-28'>
+                      <div className='o-media__fluid u-mr-40 u-mb-20'>
+                        <label>Name*</label>
+                        <input type='text' placeholder='Jason Yeung'></input>
+                      </div>
 
-                    <div className='o-media__fluid'>
-                    <label>E-mail*</label>
-                    <input type='text' placeholder='contact@jasonyeung.me'></input>
-                    </div>
-                </div>
+                      <div className='o-media__fluid'>
+                        <label>E-mail*</label>
+                        <input type='text' placeholder='contact@jasonyeung.me'></input>
+                      </div>
+                  </div>
 
-                <label>Message</label>
-                <textarea placeholder="Hey Jason, it's me, Jason. I want to talk to you about something."></textarea>
+                  <label>Message</label>
+                  <textarea placeholder="Hey Jason, it's me, Jason. I want to talk to you about something."></textarea>
 
-                <button className='u-color-white u-mt-28'>Send Message</button>
+                  <button className='u-color-white u-mt-28'>Send Message</button>
                 </form>
               </div>
             </div>

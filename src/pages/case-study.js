@@ -40,7 +40,7 @@ class CaseStudy extends Component {
                 {/* CONTENT NAV */}
                 <nav className='p-case-study__nav p-case-study__nav--hidden p-case-study__nav--down' ref={(e) => {this.nav = e}}>
                     <div className='o-container o-container--wide u-text-center'>
-                        <a href='#' className='c-link u-color-black'><h6>Back to top</h6></a>
+                        <a href='#' className='c-link u-color-black'><h6><span className='c-icon-arrow'></span> Back to top</h6></a>
                         <ul className='o-list o-list--inline'>
                             <li className='o-list__item'><a className='c-link c-link--alt' href='#'>Source</a></li>
                             <li className='o-list__item'><a className='c-link c-link--alt' href='#'>Try the Demo</a></li>

@@ -8,14 +8,14 @@ const Nav = () => (
     <div className='o-container o-container--wide'>
       <div className='o-media o-media--middle'>
         <div className='o-media__fixed'>
-          <h5 className='c-subhead'>
+          <h5>
             <Link to='/'>Jason Yeung</Link>
           </h5>
         </div>
         <div className='o-media__fluid u-text-right'>
           <SocialMediaLinks/>
           <a className='c-link c-link--alt c-link--small 
-          u-color-gray-dark u-ml-40' href='#'>Contact Me</a>
+          u-color-gray-dark u-ml-40' href='#contact-form'>Contact Me</a>
         </div>
       </div>
     </div>

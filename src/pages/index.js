@@ -16,7 +16,7 @@ const IndexPage = () => (
     
     <div className='p-homepage__title'>
       <div className='o-container o-container--title u-text-center'>
-        <span className='c-icon-arrow-up'></span>
+        <span className='c-icon-arrow-stopped u-opacity-25'></span>
         <h1 className='c-subhead'>Jason Yeung</h1>
         <h6>Front-End Developer</h6>
       </div>
@@ -101,8 +101,15 @@ const IndexPage = () => (
 
                 <ul className='o-list o-list--inline u-mt-20'>
                   <li className='o-list__item'><Link to='/case-study/' className='c-link c-link--alt'>Case Study</Link></li>
-                  <li className='o-list__item'><a href='#' className='c-link c-link--alt u-color-gray-dark'><span className='c-icon-github'></span> Source</a></li>
-                  <li className='o-list__item'><a href='#' className='c-link c-link--alt u-color-gray-dark'>Demo</a></li>
+                  <li className='o-list__item'>
+                    <a href='#' className='c-link c-link--alt u-color-gray-dark'>Try the demo</a>
+                  </li>
+
+                  <li className='o-list__item'>
+                    <a href='#' className='c-link c-link--alt u-color-gray-dark'>
+                      <span className='c-icon-github u-mr-8'></span>Source
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

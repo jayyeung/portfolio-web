@@ -69,6 +69,7 @@ input {
 textarea {
     @extend input;
     font-family: $font-body !important;
+    font-style: normal !important;
     @include ms-respond(font-size, 0);
     height: 5rem;
     margin-top: sp(-4);
