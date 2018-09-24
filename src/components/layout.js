@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Header from '../components/header';
-import Footer from '../components/footer';
+import Header from './header';
+import Footer from './footer';
 import '../styles/main.scss';
 
-const Layout = ({ children, locaiton }) => (
+const Layout = ({ children, location }) => (
   <div>
     <Header />
     <div id='container'>
@@ -15,7 +15,7 @@ const Layout = ({ children, locaiton }) => (
   </div>
 );
 
-Layout.propTypes = {
+Layout.propTypes = { 
   children: PropTypes.func,
 };
 

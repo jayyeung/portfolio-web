@@ -54,6 +54,10 @@
         z-index: 1;
     }
 
+    & > *:not(.c-label) {
+        border: 1px solid color-get(brand, main);
+    }
+
     &::after {
         content: '';
         position: absolute;

@@ -67,11 +67,17 @@ $iota-objs-container-size-extra: (
 
     wide: (
         null: 100%,
-        sm: 95%,
-        lg: 85%,
+        sm: 93%,
+        lg: 83%,
     ),
     
     // content containers
+    nav: (
+        null: 100%,
+        sm: 95%,
+        lg: 85%,
+    ),
+
     content: ( 
         null: 600px,
         sm: 720px,
