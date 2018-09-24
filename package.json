@@ -15,8 +15,11 @@
   },
   "dependencies": {
     "gatsby": "^2.0.0-rc.28",
+    "gatsby-plugin-layout": "^1.0.1",
+    "gatsby-plugin-netlify-cms": "^3.0.2",
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sass": "^2.0.1",
+    "netlify-cms": "^2.1.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
