@@ -151,4 +151,4 @@ class CaseStudy extends Component {
   }
 }
 
-export default CaseStudy
+export default CaseStudy;

@@ -80,6 +80,8 @@ label {
     @extend .c-label;
     color: color-get(gray) !important;
     display: block;
+
+    & + input { margin-top: sp(-8); }
 }
 
 button {

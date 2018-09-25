@@ -12,16 +12,13 @@ const IndexPage = () => (
           You can{' '}
           <a href="#" className="c-link">
             learn about me
-          </a>
-          ,{' '}
+          </a>,{' '}
           <a href="#" className="c-link">
             my work
-          </a>
-          , or{' '}
+          </a>, or{' '}
           <a href="#" className="c-link u-color-gray-dark">
             contact me
-          </a>
-          .
+          </a>.
         </h1>
       </div>
     </div>
