@@ -18,4 +18,4 @@ collections:
       - {label: "Draft", name: "draft", widget: "boolean", default: true}
       - {label: 'Project Link', name: 'project_link', widget: 'string'}
       - {label: 'Source Code', name: 'source', widget: 'string'}
-      - {label: 'Content', name: 'content', widget: 'markdown'}
+      - {label: 'Content', name: 'body', widget: 'markdown'}

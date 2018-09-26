@@ -95,7 +95,7 @@ class CaseStudy extends Component {
 
         {/* CONTENT */}
         <div className="p-case-study__content u-mt-20">
-          {frontmatter.content}
+          {frontmatter.body}
           <p>
             <strong>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -152,7 +152,7 @@ export const StudyQuery = graphql`
         title,
         project_type,
         project_link,
-        content
+        body
       }
     }
   }
