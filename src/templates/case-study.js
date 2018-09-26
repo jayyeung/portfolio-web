@@ -94,8 +94,9 @@ class CaseStudy extends Component {
         </div>
 
         {/* CONTENT */}
-        <div className="p-case-study__content u-mt-20">
-          {frontmatter.body}
+        <div className="p-case-study__content u-mt-20"
+          dangerouslySetInnerHTML={markdownRemark.html}>
+          
           <p>
             <strong>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -148,11 +149,11 @@ const ProjectInfo = ({ source, demo, className }) => (
 export const StudyQuery = graphql`
   query($slug: String!) {
     markdownRemark(fields: { slug: { eq: $slug }}) {
+      html,
       frontmatter {
         title,
         project_type,
-        project_link,
-        body
+        project_link
       }
     }
   }
