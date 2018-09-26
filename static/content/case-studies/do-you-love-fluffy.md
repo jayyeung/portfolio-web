@@ -23,4 +23,8 @@ If not return end
 
 **Here's a figure:**
 
-figure
+
+  <figure>
+    <img src=/assets/images/20130830_212932000_ios.jpg alt=test/>
+    <figcaption>teststs</figcaption>
+  </figure>
