@@ -10,11 +10,12 @@ collections:
   - label: 'Case studies'
     name: 'case-study'
     label_singular: 'Case study'
-    folder: 'static/content/case_studies'
+    folder: 'static/content/case-studies'
     create: true
     fields:
       - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'Project Type', name: 'project_type', widget: 'string'}
       - {label: "Draft", name: "draft", widget: "boolean", default: true}
-      - {label: 'Project Link', name: 'project-link', widget: 'string'}
+      - {label: 'Project Link', name: 'project_link', widget: 'string'}
       - {label: 'Source Code', name: 'source', widget: 'string'}
       - {label: 'Content', name: 'content', widget: 'markdown'}

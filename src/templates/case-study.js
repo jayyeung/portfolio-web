@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'gatsby'
+import { Link, grpahql } from 'gatsby'
 
 class CaseStudy extends Component {
   constructor(props) {
@@ -42,40 +42,31 @@ class CaseStudy extends Component {
   }
 
   render() {
+    const { data } = this.props;
+    const { markdownRemark } = data;
+    const { frontmatter } = markdownRemark;
+
     return (
       <div className="p-case-study">
         {/* CONTENT NAV */}
         <nav
           className="p-case-study__nav p-case-study__nav--hidden p-case-study__nav--down"
-          ref={e => {
-            this.nav = e
-          }}>
+          ref={(e) => { this.nav = e }}>
           <div className="o-container o-container--wide u-text-center">
             <a href="#" className="c-link u-color-black">
               <h6>
                 <span className="c-icon-arrow" /> Back to top
               </h6>
             </a>
-            <ul className="o-list o-list--inline">
-              <li className="o-list__item">
-                <a className="c-link c-link--alt u-color-gray-dark" href="#">
-                  <span className='c-icon-github u-mr-8'></span>Source
-                </a>
-              </li>
-              <li className="o-list__item">
-                <a className="c-link c-link--alt" href="#">
-                  View Project
-                </a>
-              </li>
-            </ul>
+            <ProjectInfo source={frontmatter.source} demo={frontmatter.project_link}/>
           </div>
         </nav>
 
         {/* TITLE */}
         <div className="o-container o-container--title u-text-center">
-          <span className="c-label c-label--alt u-bgcolor-black">Web Game</span>
-          <h1 className="u-mt-20 u-mb-20">Disguise Chatroom</h1>
-        </div>
+          <span className="c-label c-label--alt u-bgcolor-black">{frontmatter.project_type}</span>
+          <h1 className="u-mt-20 u-mb-20">{frontmatter.title}</h1>
+        </div> 
 
         <div className="o-container o-container--content u-text-center">
           <p>
@@ -84,26 +75,15 @@ class CaseStudy extends Component {
             Meteor as the tech stack. The idea was that the chatroom allowed
             users to disguise themselves as other people
           </p>
-          <ul className="o-list o-list--inline u-mt-20 u-mb-60">
-            <li className="o-list__item">
-              <a className="c-link c-link--alt u-color-gray-dark" href="#">
-                <span className='c-icon-github u-mr-8'></span>Source
-              </a>
-            </li>
-            <li className="o-list__item">
-              <a className="c-link c-link--alt" href="#">
-                View Project
-              </a>
-            </li>
-          </ul>
+          <ProjectInfo className='u-mt-20 u-mb-60' 
+          source={frontmatter.source} 
+          demo={frontmatter.project_link}/>
         </div>
 
         {/* DEMO */}
         <div
           className="o-container u-text-center"
-          ref={e => {
-            this.trigger = e
-          }}>
+          ref={(e) => { this.trigger = e }}>
           <div className="p-case-study__demo">
             <div className="c-label u-mb-20">
               <span className="c-icon-observe u-block u-mb-8" />
@@ -115,6 +95,7 @@ class CaseStudy extends Component {
 
         {/* CONTENT */}
         <div className="p-case-study__content u-mt-20">
+          {frontmatter.content}
           <p>
             <strong>
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -147,8 +128,35 @@ class CaseStudy extends Component {
           <h1>Interesting Points of Implementation</h1>
         </div>
       </div>
-    )
+    );
   }
-}
+};
+
+const ProjectInfo = ({ source, demo, className }) => (
+  <ul className={'o-list o-list--inline ' + className} >
+    <li className="o-list__item">
+      <a className="c-link c-link--alt u-color-gray-dark" href={source}>
+        <span className='c-icon-github u-mr-8'></span>Source
+      </a>
+    </li>
+    <li className="o-list__item">
+      <a className="c-link c-link--alt" href={demo}>View Project</a>
+    </li>
+  </ul>
+);
+
+export const StudyQuery = graphql`
+  query($slug: String!) {
+    markdownRemark(fields: { slug: { eq: $slug }}) {
+      frontmatter {
+        title,
+        project_type,
+        project_link,
+        content
+      }
+    }
+  }
+`;
+
 
 export default CaseStudy;
