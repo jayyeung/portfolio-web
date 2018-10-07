@@ -1,18 +1,22 @@
 import React from 'react';
+import posed from 'react-pose';
 import PropTypes from 'prop-types';
 
 import Header from './header';
 import Footer from './footer';
+import Transition from './transition';
 import '../styles/main.scss';
 
+
 const Layout = ({ children, location }) => (
-  <div>
+  <Transition location={location}>
     <Header />
-    <div id='container'>
-      {children}
-    </div>
+      <div id='container'>
+        {children}
+      </div>
+      <div id='scroll-bottom'></div>
     <Footer />
-  </div>
+  </Transition>
 );
 
 Layout.propTypes = { 

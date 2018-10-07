@@ -21,6 +21,11 @@ module.exports = {
         name: "content",
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: ['gatsby-remark-prismjs']
+      }
+    }
   ],
 }

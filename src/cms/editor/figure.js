@@ -1,3 +1,10 @@
+const output = (obj) => (`
+  <figure>
+    <img src=${obj.image} alt=${obj.alt_text || obj.caption || ''}/>
+    ${(obj.caption) ? `<figcaption>${obj.caption}</figcaption>` : ''}
+  </figure>
+`);
+
 const Figure = {
   id: 'figure',
   label: 'Figure',
@@ -6,13 +13,8 @@ const Figure = {
     {name: 'alt_text', label: 'Alt Text', widget: 'string'},
     {name: 'caption', label: 'Caption', widget: 'string'}
   ],
-  toBlock: () => ('figure'),
-  toPreview: (obj) => (
-    `<figure>
-      <img src=${obj.image} alt=${obj.alt_text || obj.caption || ''}/>
-      ${(obj.caption) ? `<figcaption>${obj.caption}</figcaption>` : ''}
-    </figure>`
-  )
+  toBlock: output,
+  toPreview: output
 };
 
 export default Figure;

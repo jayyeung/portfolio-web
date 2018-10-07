@@ -1,5 +1,17 @@
-import React, { Component } from 'react'
-import { Link, grpahql } from 'gatsby'
+import React, { Component } from 'react';
+import { Link, graphql } from 'gatsby';
+import posed from 'react-pose';
+
+import ScrollLink from '../components/partials/scroll-link';
+
+const Study = posed.div({
+  init: { scale: 1, y: -20, opacity: 0 },
+  enter: { 
+    y: 0, 
+    opacity: 1,
+    transition: { ease: 'easeOut' }
+  }
+});
 
 class CaseStudy extends Component {
   constructor(props) {
@@ -10,35 +22,28 @@ class CaseStudy extends Component {
     }
   }
 
-  componentDidMount() {
-    document.addEventListener('scroll', this.navScroll)
-  }
-  componentWillUnmount() {
-    document.removeEventListener('scroll', this.navScroll)
-  }
+  componentDidMount() { document.addEventListener('scroll', this.navScroll); }
+  componentWillUnmount() { document.removeEventListener('scroll', this.navScroll); }
 
   navScroll = () => {
-    const trigger = this.trigger.offsetTop
-    const nav = this.nav
+    const trigger = this.trigger.offsetTop;
+    const nav = this.nav;
 
     // Show & Hide Nav
-    const triggered = this.state.triggered
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+    const triggered = this.state.triggered;
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (
-      (!triggered && scrollTop > trigger) ||
-      (triggered && scrollTop <= trigger)
-    ) {
-      nav.classList.toggle('p-case-study__nav--hidden')
-      this.setState({ triggered: !triggered })
+    if ((!triggered && scrollTop > trigger) || (triggered && scrollTop <= trigger)) {
+      nav.classList.toggle('p-case-study__nav--hidden');
+      this.setState({ triggered: !triggered });
     }
 
     // Scroll Direction
-    const lastScrolled = this.state.lastScrolled
+    const lastScrolled = this.state.lastScrolled;
 
-    if (scrollTop > lastScrolled) nav.classList.add('p-case-study__nav--down')
-    else nav.classList.remove('p-case-study__nav--down')
-    this.setState({ lastScrolled: scrollTop <= 0 ? 0 : scrollTop })
+    if (scrollTop > lastScrolled) nav.classList.add('p-case-study__nav--down');
+    else nav.classList.remove('p-case-study__nav--down');
+    this.setState({ lastScrolled: scrollTop <= 0 ? 0 : scrollTop });
   }
 
   render() {
@@ -47,18 +52,26 @@ class CaseStudy extends Component {
     const { frontmatter } = markdownRemark;
 
     return (
-      <div className="p-case-study">
+      <Study className="p-case-study">
         {/* CONTENT NAV */}
-        <nav
-          className="p-case-study__nav p-case-study__nav--hidden p-case-study__nav--down"
+        <nav className="p-case-study__nav p-case-study__nav--hidden p-case-study__nav--down"
           ref={(e) => { this.nav = e }}>
           <div className="o-container o-container--wide u-text-center">
-            <a href="#" className="c-link u-color-black">
-              <h6>
-                <span className="c-icon-arrow" /> Back to top
+            <h1 className="p-case-study__nav-title">{frontmatter.title}</h1>
+            <div className='o-media o-media--middle'>
+              <h6 className='u-text-left'>
+                <Link to='/#my-work' className='c-link u-color-gray-dark'>
+                  <span className="c-icon-arrow-left u-mr-4"/> Back to work
+                </Link>
               </h6>
-            </a>
-            <ProjectInfo source={frontmatter.source} demo={frontmatter.project_link}/>
+
+              <div className='o-media__fluid u-relative u-text-right'>
+                <ScrollLink to="#" className="p-case-study__nav-up c-link u-color-black">
+                  <h6><span className="c-icon-arrow"/> Back to top</h6>
+                </ScrollLink>
+                <ProjectInfo className="p-case-study__nav-down" source={frontmatter.source} demo={frontmatter.project_link}/>
+              </div>
+            </div>
           </div>
         </nav>
 
@@ -69,12 +82,7 @@ class CaseStudy extends Component {
         </div> 
 
         <div className="o-container o-container--content u-text-center">
-          <p>
-            Disguise Chatroom was a concept I had while doing a{' '}
-            <a href="#">DailyUI Challenge</a>. The app uses HTML/CSS, Vue.js and
-            Meteor as the tech stack. The idea was that the chatroom allowed
-            users to disguise themselves as other people
-          </p>
+          <p>{frontmatter.summary}</p>
           <ProjectInfo className='u-mt-20 u-mb-60' 
           source={frontmatter.source} 
           demo={frontmatter.project_link}/>
@@ -89,52 +97,27 @@ class CaseStudy extends Component {
               <span className="c-icon-observe u-block u-mb-8" />
               Demonstration
             </div>
-            <img src="http://placehold.it/1600x800" />
+            <div className="p-case-study__demo-video">
+              <iframe src="https://www.youtube.com/embed/8HSr8BjcufM?rel=0&amp;
+              loop=1&amp;autoplay=1&amp;mute=1&amp;controls=0&amp;showinfo=0&amp;playlist=8HSr8BjcufM"  
+                width="1600" height="800" frameBorder="0"
+                allowFullScreen allow="autoplay; encrypted-media">
+              </iframe>
+            </div>
           </div>
         </div>
 
         {/* CONTENT */}
         <div className="p-case-study__content u-mt-20"
-          dangerouslySetInnerHTML={markdownRemark.html}>
-          
-          <p>
-            <strong>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Consequuntur ad in, velit similique itaque nihil quae beatae
-              dolorum numquam expedita.
-            </strong>
-          </p>
-          <p>
-            One of the most challenging aspects my work with Engine, is slowly
-            introducing improvements to the UI without breaking the conventions
-            of the existing system. With the release of the Apex M750 keyboard,
-            we knew our previous illumination UI needed to be revisited. The
-            existing UI was meaningless to users who had no image editing
-            experience. The revised UI featured labels for each tool, a default
-            to the most commonly used tools, and more obvious redo/undo buttons.
-            I prototyped the new UI's behavior which you can view below.
-          </p>
-          <p>
-            Whenever we run the <code>wagTail()</code> animation is executed, it
-            is pretty good
-          </p>
-          <figure>
-            <img src="https://gastrofork.ca/wp-content/uploads/2018/08/radicle-juice-1280x860.jpg" />
-            <figcaption>
-              The image above depicts two tweens used to create the "curling"
-              effect for Fluffy.
-            </figcaption>
-          </figure>
-
-          <h1>Interesting Points of Implementation</h1>
+          dangerouslySetInnerHTML={{__html: markdownRemark.html}}>
         </div>
-      </div>
+      </Study>
     );
   }
 };
 
 const ProjectInfo = ({ source, demo, className }) => (
-  <ul className={'o-list o-list--inline ' + className} >
+  <ul className={'o-list o-list--inline ' + (className || '')} >
     <li className="o-list__item">
       <a className="c-link c-link--alt u-color-gray-dark" href={source}>
         <span className='c-icon-github u-mr-8'></span>Source
@@ -153,7 +136,9 @@ export const StudyQuery = graphql`
       frontmatter {
         title,
         project_type,
-        project_link
+        project_link,
+        summary,
+        source
       }
     }
   }

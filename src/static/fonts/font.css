@@ -41,14 +41,16 @@
     line-height: 1;
 }
 
-.c-icon-arrow { font-size: 0.8em; }
+.c-icon-arrow, .c-icon-arrow-left { font-size: 0.8em; }
+.c-icon-arrow-left { display: inline-block; transform: rotate(-90deg); }
+
 .c-icon-github { font-size: 1em; }
 
 .c-icon-github:before { content: "\f09b";}
 .c-icon-behance:before { content: "\f1b4"; }
 .c-icon-codepen:before { content: "\f1cb"; }
 
-.c-icon-arrow:before { content: "\e903"; }
+.c-icon-arrow:before, .c-icon-arrow-left:before { content: "\e903"; }
 .c-icon-arrow-stopped:before { content: "\e900"; }
 .c-icon-observe:before { content: "\e901"; }
 .c-icon-external:before { content: "\e902"; }

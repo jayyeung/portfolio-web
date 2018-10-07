@@ -5,13 +5,13 @@ class Transition extends PureComponent {
     render() {
         const { children, location } = this.props;
         const RouteWrapper = posed.div({
-            enter: { opacity: 1, delay: 300, beforeChildren: true },
-            exit: { opacity: 0 },
+            enter: { opacity: 1, staggerChildren: 500, beforeChildren: true },
+            exit: { opacity: 0, afterChildren: true }
         });
 
         return (
             <PoseGroup>
-                <RouteWrapper key={location.pathname}>
+                <RouteWrapper key={location.pathname}> 
                     {children}
                 </RouteWrapper>
             </PoseGroup>

@@ -1,7 +1,7 @@
 ---
 draft: true
 title: Do you love Fluffy?
-thumbnail: /assets/images/fluffy-thumbnail.png
+thumbnail: /content/assets/fluffy-thumbnail.png
 project_demo: 'https://www.youtube.com/watch?v=bhO_Z6YeZLI&t=4179s'
 project_type: Simple Web Game
 project_link: 'https://www.youtube.com/watch?v=bhO_Z6YeZLI&t=4179s'

@@ -4,7 +4,7 @@ backend:
   branch: master
 
 media_folder: 'static/content/assets'
-public_folder: 'assets/images'
+public_folder: 'content/assets'
 
 collections:
   - label: 'Case studies'
@@ -13,9 +13,12 @@ collections:
     folder: 'static/content/case-studies'
     create: true
     fields:
-      - {label: 'Title', name: 'title', widget: 'string'}
-      - {label: 'Project Type', name: 'project_type', widget: 'string'}
       - {label: "Draft", name: "draft", widget: "boolean", default: true}
+      - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'Thumbnail', name: 'thumbnail', widget: 'image', default: 'http://placehold.it/400x280'}
+      - {label: 'Project Demo', name: 'project_demo', widget: 'string'}
+      - {label: 'Project Type', name: 'project_type', widget: 'string'}
       - {label: 'Project Link', name: 'project_link', widget: 'string'}
       - {label: 'Source Code', name: 'source', widget: 'string'}
+      - {label: 'Summary', name: 'summary', widget: 'text'}
       - {label: 'Content', name: 'body', widget: 'markdown'}
