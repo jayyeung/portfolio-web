@@ -1,0 +1,43 @@
+.c-contact-form__success {
+    display: none;
+    align-items: center;
+    padding-left: sp(-40);
+
+    position: absolute;
+    top: 0; bottom: 0;
+    left: $iota-objs-container-gutter-default; right: 0;
+    z-index: 1;
+    background: rgba(color-get(black), 0.9);
+
+    &-message {
+        padding: sp(-20) sp(-24);
+        border: 1px solid color-get(brand, main);
+    }
+}
+
+.c-contact-form__check {
+    content: '';
+    display: block;
+    float: left;
+    margin-right: sp(-16);
+    width: 6em;
+    height: 6em;
+
+    border-radius: 100%;
+    border: inherit;
+
+    position: relative;
+    &::after {
+        content: '';
+        width: 30%;
+        height: 60%;
+
+        position: absolute;
+        left: 50%; top: 45%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border: 0.2em solid color-get(brand, main);
+
+        border-left: none;
+        border-top: none;
+    }
+}

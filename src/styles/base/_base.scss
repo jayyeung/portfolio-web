@@ -21,9 +21,11 @@
 }
 
 nav {
-    padding-top: sp(-16);
+    padding-top: sp(-32);
     padding-bottom: sp(-16);
-    position: fixed;
+    @include iota-breakpoint(md) { padding-top: sp(-40); }
+
+    position: absolute;
     top: 0;
     left: 0; right: 0;
     z-index: 9999;
@@ -52,6 +54,7 @@ input {
     @include ms-respond(font-size, 1);
     @extend .c-subhead;
     width: 100%;
+    padding-bottom: sp(-8);
 
     outline: none;
     background: none;
@@ -95,13 +98,6 @@ button {
     background: none;
     border: none;
     padding: 0;
-}
-
-code {
-    font-family: $font-support-2; 
-    padding: sp(-4) sp(-8);
-    background: color-get(gray, light);
-    border: 1px solid rgba(color-get(gray), 0.7);
 }
 
 hr {

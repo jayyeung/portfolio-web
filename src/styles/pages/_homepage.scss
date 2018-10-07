@@ -1,14 +1,11 @@
 .p-homepage__hero {
     background: #E2E2E2;
-    padding: sp(-40)*3 0 70vh;
-    z-index: -100;
+    padding: sp(-60)*2 0 70vh;
+    z-index: 2;
 
     @include iota-breakpoint(md) {
         padding: sp(-60)*3 0 90vh;
     }
-
-    pointer-events: none;
-    a { pointer-events: auto; }
 
     position: relative;
     &::after {
@@ -43,6 +40,8 @@
 
 .p-homepage__title {
     margin-top: -#{sp(-60)*5};
+    position: relative;
+    z-index: 3;
 }
 
 .p-homepage__skill {
@@ -120,7 +119,7 @@
         display: flex;
         flex-direction: column;
         height: 100%;
-        box-shadow: 0 0 12px rgba(black, 0.1);
+        border: 1px solid transparent;
         background: color-get(element, card);
         img { width: 100%; }
 
@@ -128,7 +127,6 @@
         &:hover { 
             transform: scale(1.01); 
             border: 1px solid color-get(brand, main);
-            box-shadow: 0 0 6px rgba(black, 0.1);
         }
     }
 

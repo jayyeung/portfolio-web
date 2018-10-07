@@ -6,30 +6,46 @@
 .p-case-study__nav {
     padding: sp(-20) 0;
     
+    position: fixed;
     top: initial; bottom: 0;
     background: color-get(element, bg);
     text-align: right;
     overflow: hidden;
 
     @include iota-breakpoint(sm) { 
-        padding-bottom: sp(-24);
+        padding-bottom: sp(-28);
         top: 0; bottom: initial; 
         text-align: center;
     }
     
     h6 { @include ms-respond(font-size, 0); }
 
-    // TODO edit into proper classes
-    a { transition: transform 0.3s; }
-    ul { 
+    &-title {
+        display: none;
+        @include ms-respond(font-size, 2);
+        @extend .o-container, .o-container--content;
+        @include iota-breakpoint(sm) { display: block; }
+
         position: absolute;
-        top: 100%;
-        left: 0; right: 0;
+        left: 50%; top: 50%;
+        transform: translate(-50%, -50%);
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    // TODO edit into proper classes
+    &-up, &-down { transition: all 0.3s; }
+    &-down {
+        position: absolute;
+        top: 0; right: 0;
+        transform: translateY(200%);
     }
     &--down {
-        a { 
-            transition: transform 0.3s;
-            transform: translateY(-2.8rem); 
+        .p-case-study__nav-up { transform: translateY(-200%); }
+        .p-case-study__nav-down { 
+            top: 50%;
+            transform: translateY(-50%); 
         }
     }
     
@@ -37,6 +53,7 @@
     opacity: 1;
     transform: translateY(0);
     &--hidden {
+        &, * { pointer-events: none; }
         opacity: 0;
         transform: translateY(#{sp(-12)});
         @include iota-breakpoint(sm) { 
@@ -47,15 +64,31 @@
 
 .p-case-study__demo {
     display: inline-block;
+    width: 100%;
     margin: auto;
-
+    
     &, * {
         position: relative;
         z-index: 1;
     }
-
-    & > *:not(.c-label) {
+    
+    &-video {
+        width: 100%;
         border: 1px solid color-get(brand, main);
+        position: relative;
+        overflow: hidden;
+        padding-top: 56.25%;
+        
+        background: color-get(gray);
+        position: relative;
+        iframe, video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
     }
 
     &::after {
@@ -83,14 +116,17 @@
     @for $i from 1 through 6 {
         h#{$i} { 
             @extend h6;
+            @if ($i <= 2) { @include ms-respond(font-size, 3); }
             @extend .o-container, .o-container--content;
             margin-top: sp(-40);
-            & + * { margin-top: sp(-16); }
+            & + * { margin-top: sp(-20); }
+            & + p { margin-top: sp(-12); }
         }
     }
 
-    figure { @extend .o-container, .o-container--figure; }
-
     & > * { @extend .o-container, .o-container--content; }
     * + * { margin: sp(-40) auto; }
+
+    & > *:first-child { font-weight: bold; }
+    figure { @extend .o-container, .o-container--figure; }
 }

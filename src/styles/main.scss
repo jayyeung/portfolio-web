@@ -11,6 +11,7 @@
 @import 'base/initialize';
 @import 'base/base';
 @import 'base/type';
+@import 'base/prism-js';
 
 @import 'objects/container';
 @import 'objects/grid';
@@ -18,10 +19,11 @@
 @import 'objects/media';
 @import 'objects/type';
 
-@import 'components/label';
 @import 'components/subhead';
-@import 'components/social-media';
+@import 'components/label';
 @import 'components/link';
+@import 'components/social-media';
+@import 'components/contact-form';
 
 @import 'pages/homepage';
 @import 'pages/case-study';

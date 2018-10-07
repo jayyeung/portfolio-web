@@ -1,0 +1,117 @@
+// Custom styles for code-highlighting
+
+pre[class*="language-"],
+code[class*="language-"] {
+    @extend p;
+    @include ms-respond(font-size, -1);
+    font-family: $font-support-2;
+    color: #2c7292;
+
+    text-shadow: none;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    tab-size: 4;
+    hyphens: none;
+}
+
+pre[class*="language-"]::selection,
+code[class*="language-"]::selection,
+pre[class*="language-"]::mozselection,
+code[class*="language-"]::mozselection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+  pre[class*="language-"],
+  code[class*="language-"] {
+    text-shadow: none;
+  }
+}
+
+.gatsby-highlight {
+    padding: 0;
+    border: color-get(gray, light);
+    background: lighten(color-get(brand, main), 40);
+    border: 1px solid rgba(color-get(brand, main), 0.25);
+}
+
+pre[class*="language-"] {
+  overflow: auto;
+  background: inherit;
+  padding: sp(-28) 0;
+}
+
+:not(pre) > code[class*="language-"] {
+    padding: sp(-4) sp(-8);
+    color: color-get(brand, main);
+    background: color-get(gray, light);
+    border: 1px solid rgba(color-get(gray), 0.7);
+}
+
+/*********************************************************
+* Tokens
+*/
+.namespace {
+  opacity: .7;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #8d929b;
+}
+.token.punctuation {
+  color: color-get(gray, dark);
+}
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #982c2c;
+}
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #669900;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #a67f59;
+  background: transparent;
+}
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: lighten(color-get(brand, main), 5);
+}
+.token.function {
+  color: #ae4fec;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: #ee9900;
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
