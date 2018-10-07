@@ -1,7 +1,8 @@
 ---
 draft: true
 title: Do you love Fluffy?
-project_demo: /assets/images/20130830_212932000_ios.jpg
+thumbnail: /assets/images/fluffy-thumbnail.png
+project_demo: 'https://www.youtube.com/watch?v=bhO_Z6YeZLI&t=4179s'
 project_type: Simple Web Game
 project_link: 'https://www.youtube.com/watch?v=bhO_Z6YeZLI&t=4179s'
 source: 'https://www.youtube.com/watch?v=bhO_Z6YeZLI&t=4179s'
