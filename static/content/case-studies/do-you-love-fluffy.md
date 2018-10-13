@@ -42,43 +42,15 @@ One simple way I achieved it is simply **look at the direction of the heart** wh
 
 Using simple trigonometry and some helper functions in `base.js` to find the centers and radii of SVG elements, Fluffy will look in the direction of the heart whenever the heart is close enough to her. 
 
-```javascript
-// scripts/main.js
-heartEl.addEventListener('drag', function() {
-    const x = Util.getCenter(this).x - Util.getCenter(eyes).x;
-    const y = Util.getCenter(this).y - Util.getCenter(eyes).y;
-
-    const dist = Math.sqrt(Math.abs(x*x + y*y));
-    const rotate = Math.atan2(y, x);
-
-    // Don't look if it's too far
-    if (dist > 300) {
-        TweenMax.to([eyeRP, eyeLP], 0.3, { rotation: 0, x: 0 });
-	    TweenMax.to(tongue, 0.3, {scaleY: 0});
-	    return;
-    }
-
-    // Make cat look at heart if close enough
-    TweenMax.to([eyeRP, eyeLP], 0.3, {
-        rotation: rotate + '_rad_short',
-	    transformOrigin: 'left center',
-	    x: Util.getRadius(eyeRP)
-    });
-// ...
-}
-```
-
 ### Tail curling animation
 
 By far the coolest trick I did for Fluffy was its tail-curling animation. I actually got this inspiration off of a Dribbble post where the dog is wagging its tail in the app and thought it was really cute.
 
-How I did this involved using a little trick with \`stroke-dasharray\`. Stroke-dasharray lets you add dashes to a given SVG path.
-
+How I did this involved using a little trick with `stroke-dasharray`. Stroke-dasharray lets you add dashes to a given SVG path.
 
   <figure>
     <img src=/content/assets/fluffy-tail-impl.jpg alt=Fluffy Tail Implmentation Example/>
-    <figcaption>Here is a visual example of how stroke-dasharray is used in the project.</figcaption>
+    <figcaption>Here is a visual example of how `stroke-dasharray` is used in the project.</figcaption>
   </figure>
 
-
-We can take advantage of the white gaps in-between these dashes by widening the space so much that you can only see a single dash. We then create the illusion of a curling tail by offsetting the stroke back and forth using \`stroke-dashoffset\`.
+We can take advantage of the white gaps in-between these dashes by widening the space so much that you can only see a single dash. We then create the illusion of a curling tail by offsetting the stroke back and forth using `stroke-dashoffset`.
