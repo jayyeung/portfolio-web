@@ -21,19 +21,26 @@ First off, if you have played the game already then you might notice that it is 
     <figcaption>The last heart always shifts whenever you try to drag it.</figcaption>
   </figure>
 
-I purposely made it with a tight time limit so that it seems like, if you really tried hard enough, you can get it in without noticing the last trick. **The reasoning behind this was to create something simple while surprising the user whenever they play the game for the first time.**
+I purposely made it with a tight time limit so that it seems like, if you really tried hard enough, you can get it in without noticing the last trick. The reasoning behind this was to **create something simple while surprising the user whenever they play the game for the first time.**
 
-Working on this project really helped me learn how to manipulate & use SVG on the web to create something interactive. Below are some of my thoughts and how I implemented parts of the project.
-
+As someone who had self-taught design, starting from creating icons and logos using Inkscape & Illustrator, working on this project really **helped solidify my knowledge in using SVG to create interactive experience on the web.** Below are some of my thoughts and things that I encountered along the way.
 
 ### Manipulating SVG
 
-Part of using SVG 
+Although I could just make a game where you drag things to a static object that just defeats the purpose of what I wanted to solve: **how do we animate SVG elements?** 
 
+Well, one option that you can use are CSS animations. They work exactly like typical DOM elements. However, one issue that I encountered was that there is no easy way to chain sequences of animation between elements unless you keep track of the timing for each sequence by hand.
 
-Although I could just make a game where you drag things to a static object, I wanted to give character to the cat.
+Green Sock Animation Plugin (GSAP) is a JavaScript library that lets you animate DOM elements easily by . It also provides helpful callback functions and a draggable object that I later use in the game.
 
-For this, I first had to find the coordinates of the SVG elements themselves, using `.getBoundingClientRect()` to get the properties of an element, then find the centers, radii, and distances between elements using the results.
+One way I did this was to make Fluffy excited in anticipation whenever the heart is close enough to her. 
+
+  <figure>
+    <img src=/content/assets/fluffy-look.gif alt=Fluffy Eye Tracking/>
+    <figcaption>Eye tracking whenever the cursor holds the heart</figcaption>
+  </figure>
+
+All I needed was to find the coordinates of the SVG elements themselves, using `.getBoundingClientRect()` to find the centers, radii, and distances between elements. 
 
 ```javascript
 // scripts/base.js
@@ -61,16 +68,7 @@ export const Util = {
 };
 ```
 
-The next part was to animate the individual parts of the cat. Although CSS animation was an option, an issue that I encountered was that there is no easy way to chain sequences of animation between elements unless you keep track of the timing for each sequence by hand.
 
-Green Sock Animation Plugin (GSAP) is a JavaScript library that lets you animate DOM elements easily by . It also provides helpful callback functions and a draggable object that I later used in the game.
-
-One way I did this was to make Fluffy excited in anticipation whenever the heart is close enough to her. 
-
-  <figure>
-    <img src=/content/assets/fluffy-look.gif alt=Fluffy Eye Tracking/>
-    <figcaption>Eye tracking whenever the cursor holds the heart</figcaption>
-  </figure>
 
 ### Tail curling animation
 
@@ -80,7 +78,7 @@ How I did this involved using a little trick with `stroke-dasharray`. Stroke-das
 
   <figure>
     <img src=/content/assets/fluffy-tail-impl.jpg alt=Fluffy Tail Implmentation Example/>
-    <figcaption>Here is a visual example of how \\`stroke-dasharray\\` is used in the project.</figcaption>
+    <figcaption>Here is a visual example of how stroke-dasharray is used in the project.</figcaption>
   </figure>
 
 We can take advantage of the white gaps in-between these dashes by widening the space so much that you can only see a single dash. We then create the illusion of a curling tail by offsetting the stroke back and forth using `stroke-dashoffset`.
