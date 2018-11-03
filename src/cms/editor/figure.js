@@ -1,6 +1,6 @@
 const output = (obj) => (`
   <figure>
-    <img src=${obj.image} alt=${obj.alt_text || obj.caption || ''}/>
+    <img src='${obj.image}' alt='${obj.alt_text || obj.caption || ''}'/>
     ${(obj.caption) ? `<figcaption>${obj.caption}</figcaption>` : ''}
   </figure>
 `);

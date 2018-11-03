@@ -47,13 +47,15 @@ class ContactForm extends Component {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': formName, ...this.state }),
     })
-    .then(() => { 
+    .then(({status}) => { 
+      this.setState({sending: false});
+      if (status !== 200) return;
+
       // Session storage to prevent multiple messages
-      this.setState({messageSent: true, sending: false})
+      this.setState({messageSent: true});
       sessionStorage.setItem('hasSentMessage', true);
     })
     .catch(err => alert(err));
-    this.setState({sending: true});
   }
 
   handleChange = e => { this.setState({ [e.target.name]: e.target.value }); }
@@ -105,7 +107,7 @@ class ContactForm extends Component {
           <div className="c-contact-form__success-message">
             <div className="c-contact-form__check"></div>
             <h6 className="u-color-white u-mb-4">Your message has been sent!</h6>
-            <p>Thanks for your message! If need be, I will try to reply to you within 24 &ndash; 48 hours, or as soon as possible! Thanks! — Jason</p>
+            <p className="u-color-gray-dark">Thanks for your message! If need be, I will try to reply to you within 24 &ndash; 48 hours, or as soon as possible! Thanks! — Jason</p>
           </div>
         </SuccessMessage>
       </form>

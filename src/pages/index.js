@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 
 import ScrollLink from '../components/partials/scroll-link';
+import ProjectLink from '../components/partials/project-link';
 import { SocialMediaLinks } from '../components/partials/social-media';
 
 const IndexPage = ({ data }) => {
@@ -22,9 +23,10 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
 
+      <div className="p-homepage__pic"></div>
+
       <div className="p-homepage__title">
-        <div className="o-container o-container--content u-text-center">
-          <span className="c-icon-arrow-stopped u-opacity-25" />
+        <div className="o-container o-container--content u-bgcolor-element-bg u-text-center u-pv-24">
           <h1>Jason Yeung</h1>
           <h6 className="c-subhead">Front-End Developer</h6>
           <p className="u-mt-12 u-mb-24">
@@ -145,24 +147,11 @@ const WorkItem = ({ children, data, to }) => (
           <p>{children}</p>
         </Link>
 
-        <ul className="o-list o-list--inline u-mt-20">
+        <ProjectLink className='u-mt-20' source={data.source} demo={data.project_link}>
           <li className="o-list__item">
             <Link to={to} className="c-link c-link--alt">Case Study</Link>
           </li>
-
-          <li className="o-list__item">
-            <a href={data.source} className="c-link c-link--alt u-color-gray-dark" >
-              <span className="c-icon-github u-mr-8" />
-              Source
-            </a>
-          </li>
-          
-          <li className="o-list__item">
-            <a href={data.project_link} className="c-link c-link--alt u-color-gray-dark" >
-              View Project
-            </a>
-          </li>
-        </ul>
+        </ProjectLink>
       </div>
     </div>
   </div>

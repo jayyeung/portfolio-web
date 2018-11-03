@@ -3,6 +3,7 @@ import { Link, graphql } from 'gatsby';
 import posed from 'react-pose';
 
 import ScrollLink from '../components/partials/scroll-link';
+import ProjectLink from '../components/partials/project-link';
 
 const Study = posed.div({
   init: { scale: 1, y: -20, opacity: 0 },
@@ -57,7 +58,7 @@ class CaseStudy extends Component {
         <nav className="p-case-study__nav p-case-study__nav--hidden p-case-study__nav--down"
           ref={(e) => { this.nav = e }}>
           <div className="o-container o-container--wide u-text-center">
-            <h1 className="p-case-study__nav-title">{frontmatter.title}</h1>
+            <ScrollLink to="#"><h1 className="p-case-study__nav-title">{frontmatter.title}</h1></ScrollLink>
             <div className='o-media o-media--middle'>
               <h6 className='u-text-left'>
                 <Link to='/#my-work' className='c-link u-color-gray-dark'>
@@ -69,7 +70,9 @@ class CaseStudy extends Component {
                 <ScrollLink to="#" className="p-case-study__nav-up c-link u-color-black">
                   <h6><span className="c-icon-arrow"/> Back to top</h6>
                 </ScrollLink>
-                <ProjectInfo className="p-case-study__nav-down" source={frontmatter.source} demo={frontmatter.project_link}/>
+                <ProjectLink className="p-case-study__nav-down" 
+                source={frontmatter.source} 
+                demo={frontmatter.project_link} alt/>
               </div>
             </div>
           </div>
@@ -83,9 +86,9 @@ class CaseStudy extends Component {
 
         <div className="o-container o-container--content u-text-center">
           <p>{frontmatter.summary}</p>
-          <ProjectInfo className='u-mt-20 u-mb-60' 
+          <ProjectLink className='u-mt-20 u-mb-60' 
           source={frontmatter.source} 
-          demo={frontmatter.project_link}/>
+          demo={frontmatter.project_link} alt/>
         </div>
 
         {/* DEMO */}
@@ -115,19 +118,6 @@ class CaseStudy extends Component {
     );
   }
 };
-
-const ProjectInfo = ({ source, demo, className }) => (
-  <ul className={'o-list o-list--inline ' + (className || '')} >
-    <li className="o-list__item">
-      <a className="c-link c-link--alt u-color-gray-dark" href={source}>
-        <span className='c-icon-github u-mr-8'></span>Source
-      </a>
-    </li>
-    <li className="o-list__item">
-      <a className="c-link c-link--alt" href={demo}>View Project</a>
-    </li>
-  </ul>
-);
 
 export const StudyQuery = graphql`
   query($slug: String!) {

@@ -1,45 +1,25 @@
 .p-homepage__hero {
-    background: #E2E2E2;
-    padding: sp(-60)*2 0 70vh;
+    padding: sp(-60)*2 0 0;
     z-index: 2;
 
     @include iota-breakpoint(md) {
-        padding: sp(-60)*3 0 90vh;
-    }
-
-    position: relative;
-    &::after {
-        content: '';
-        height: 50%;
-        position: absolute;
-        bottom: 0;
-        left: 0; right: 0;
-
-        // https://larsenwork.com/easing-gradients/
-        background: linear-gradient(
-            to bottom,
-            hsla(0, 0%, 100%, 0) 0%,
-            hsla(0, 0%, 100%, 0.013) 11%,
-            hsla(0, 0%, 100%, 0.049) 20.2%,
-            hsla(0, 0%, 100%, 0.104) 27.8%,
-            hsla(0, 0%, 100%, 0.175) 34.1%,
-            hsla(0, 0%, 100%, 0.259) 39.5%,
-            hsla(0, 0%, 100%, 0.352) 44.1%,
-            hsla(0, 0%, 100%, 0.45) 48.3%,
-            hsla(0, 0%, 100%, 0.55) 52.4%,
-            hsla(0, 0%, 100%, 0.648) 56.6%,
-            hsla(0, 0%, 100%, 0.741) 61.2%,
-            hsla(0, 0%, 100%, 0.825) 66.5%,
-            hsla(0, 0%, 100%, 0.896) 72.7%,
-            hsla(0, 0%, 100%, 0.951) 80.2%,
-            hsla(0, 0%, 100%, 0.987) 89.2%,
-            hsl(0, 0%, 100%) 100%
-        );
+        padding: sp(-60)*3 0 0;
     }
 }
 
+.p-homepage__pic {
+    @extend .o-container, .o-container--wide;
+    margin: -2.4rem auto -2.8rem;
+    background: red;
+
+    height: 20rem;
+    @include iota-breakpoint(sm) { height: 25rem; }
+    @include iota-breakpoint(md) { height: 30rem; }
+    @include iota-breakpoint(lg) { height: 40rem; }
+    @include iota-breakpoint(xl) { height: 45rem; }
+}
+
 .p-homepage__title {
-    margin-top: -#{sp(-60)*5};
     position: relative;
     z-index: 3;
 }
