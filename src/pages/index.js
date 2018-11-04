@@ -159,7 +159,7 @@ const WorkItem = ({ children, data, to }) => (
 
 export const studiesQuery = graphql`
   query {
-    allMarkdownRemark {
+    allMarkdownRemark(filter: {frontmatter: {published: {eq: true}}}) {
       edges {
         node {
           fields { slug }
