@@ -25,8 +25,11 @@ exports.createPages = ({ graphql, actions }) => {
         allMarkdownRemark {
           edges {
             node {
-              fields {
-                slug
+              fields { slug },
+              frontmatter { 
+                title,
+                thumbnail,
+                project_type
               }
             }
           }
@@ -35,12 +38,15 @@ exports.createPages = ({ graphql, actions }) => {
     `)
     
     .then((result) => {
-      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+      const studies = result.data.allMarkdownRemark.edges;
+
+      result.data.allMarkdownRemark.edges.forEach(({ node }, index) => {
         createPage({
           path: node.fields.slug,
           component: path.resolve('./src/templates/case-study.js'),
           context: {
-            slug: node.fields.slug
+            slug: node.fields.slug,
+            next: (index === studies.length-1) ? studies[0].node : studies[index+1].node
           }
         });
       });

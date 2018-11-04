@@ -48,9 +48,10 @@ class CaseStudy extends Component {
   }
 
   render() {
-    const { data } = this.props;
+    const { data, pageContext } = this.props;
     const { markdownRemark } = data;
     const { frontmatter } = markdownRemark;
+    const { next } = pageContext;
 
     return (
       <Study className="p-case-study">
@@ -101,11 +102,10 @@ class CaseStudy extends Component {
               Demonstration
             </div>
             <div className="p-case-study__demo-video">
-              <iframe src="https://www.youtube.com/embed/8HSr8BjcufM?rel=0&amp;
-              loop=1&amp;autoplay=1&amp;mute=1&amp;controls=0&amp;showinfo=0&amp;playlist=8HSr8BjcufM"  
-                width="1600" height="800" frameBorder="0"
-                allowFullScreen allow="autoplay; encrypted-media">
-              </iframe>
+
+              <video width="1600" height="800" controls autoPlay loop>
+                <source src={frontmatter.project_demo} type='video/mp4'></source>
+              </video>
             </div>
           </div>
         </div>
@@ -114,6 +114,27 @@ class CaseStudy extends Component {
         <div className="p-case-study__content u-mt-20"
           dangerouslySetInnerHTML={{__html: markdownRemark.html}}>
         </div>
+
+        {/* RELATED */}
+        { (next) ? (
+        <div className="p-case-study__related">
+          <Link to={next.fields.slug}>
+            <div className="o-grid">
+              <div className="o-grid__col u-4/12 u-6/12@sm">
+                <div className="p-case-study__related-img"
+                style={{backgroundImage: `url(${next.frontmatter.thumbnail})`}}>
+                </div>
+              </div>
+              <div className="p-case-study__related-desc o-grid__col u-8/12 u-6/12@sm">
+                <h6>What to read next?</h6>
+                <h3 className="c-subhead u-mt-20 u-mb-8">{next.frontmatter.title}</h3>
+                <div className="u-mb-16"><span className="c-label c-label--alt">{next.frontmatter.project_type}</span></div>
+                <div className="c-link c-link--alt">View the details</div>
+              </div>
+            </div>
+          </Link>
+        </div>
+        ) : ''}
       </Study>
     );
   }
@@ -121,11 +142,12 @@ class CaseStudy extends Component {
 
 export const StudyQuery = graphql`
   query($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug }}) {
+    markdownRemark(fields: {slug: {eq: $slug}}) {
       html,
       frontmatter {
         title,
         project_type,
+        project_demo,
         project_link,
         summary,
         source
