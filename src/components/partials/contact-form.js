@@ -24,7 +24,7 @@ class ContactForm extends Component {
     super(props);
 
     this.state = { 
-      name: '', email: '', message: '',
+      form: {},
       messageSent: false,
       sending: false
     };
@@ -35,7 +35,7 @@ class ContactForm extends Component {
     this.setState({ messageSent: !!alreadySent });
   }
 
-  handleContact = e => {
+  handleContact = (e) => {
     e.preventDefault();
     const formName = e.target.name;
     const { messageSent, sending } = this.state;
@@ -58,7 +58,7 @@ class ContactForm extends Component {
     .catch(err => alert(err));
   }
 
-  handleChange = e => { this.setState({ [e.target.name]: e.target.value }); }
+  handleChange = (e) => { this.setState({ [e.target.name]: e.target.value }); }
 
   render() {
     const { name, email, message, messageSent } = this.state;
@@ -71,8 +71,15 @@ class ContactForm extends Component {
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleContact}>
-        
+
         <div className="o-media o-media--res u-mb-28">
+          {/* form-name required for netlify forms */}
+          <div hidden>
+            <input type="hidden" name="form-name" value="contact"/>
+            <label>Botfield</label>
+            <input name="bot-field" onChange={handleChange}/>
+          </div>
+
           <div className="o-media__fluid u-mr-40 u-mb-20">
             <label>Name*</label>
             <input
