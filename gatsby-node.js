@@ -46,7 +46,7 @@ exports.createPages = ({ graphql, actions }) => {
           component: path.resolve('./src/templates/case-study.js'),
           context: {
             slug: node.fields.slug,
-            next: (index === studies.length-1) ? studies[0].node : studies[index+1].node
+            next: (index < studies.length-1) ? studies[index+1].node : studies[0].node
           }
         });
       });
