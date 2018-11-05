@@ -47,15 +47,16 @@ class ContactForm extends Component {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': formName, ...this.state }),
     })
-    .then(({status}) => { 
+    .then((res) => {
+      console.log(res);
       this.setState({sending: false});
-      if (status !== 200) return;
+      if (res.status !== 200) return;
       
       // Session storage to prevent multiple messages
       this.setState({messageSent: true});
       sessionStorage.setItem('hasSentMessage', true);
     })
-    .catch(err => alert(err));
+    .catch((err) => alert(err));
   }
 
   handleChange = (e) => { this.setState({ [e.target.name]: e.target.value }); }
