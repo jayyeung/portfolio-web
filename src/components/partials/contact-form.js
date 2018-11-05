@@ -72,8 +72,9 @@ class ContactForm extends Component {
       <form id="contact-form" 
         name="contact" 
         method="post"
+        action="/"
         data-netlify="true"
-        
+        data-netlify-honeypot="bot-field"
         onSubmit={handleContact}>
 
         <div className="o-media o-media--res u-mb-28">
