@@ -50,7 +50,7 @@ class ContactForm extends Component {
     .then(({status}) => { 
       this.setState({sending: false});
       if (status !== 200) return;
-
+      
       // Session storage to prevent multiple messages
       this.setState({messageSent: true});
       sessionStorage.setItem('hasSentMessage', true);
@@ -73,10 +73,9 @@ class ContactForm extends Component {
         onSubmit={handleContact}>
 
         <div className="o-media o-media--res u-mb-28">
-          {/* form-name required for netlify forms */}
+          <input type="hidden" name="form-name" value="contact" />
           <div hidden>
-            <input type="hidden" name="form-name" value="contact"/>
-            <label>Botfield</label>
+            <label>Don't fill this out:</label>
             <input name="bot-field" onChange={handleChange}/>
           </div>
 
