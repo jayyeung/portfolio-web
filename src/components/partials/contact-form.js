@@ -37,7 +37,7 @@ class ContactForm extends Component {
 
   handleContact = (e) => {
     e.preventDefault();
-    const formName = e.target.name;
+    const formName = e.target.getAttribute('name');
     const { messageSent, sending, form } = this.state;
     if (messageSent || sending) return;
     
@@ -48,7 +48,6 @@ class ContactForm extends Component {
       body: encode({ 'form-name': formName, ...form }),
     })
     .then((res) => {
-      console.log(res);
       this.setState({sending: false});
       if (res.status !== 200) return;
       
@@ -72,7 +71,6 @@ class ContactForm extends Component {
       <form id="contact-form" 
         name="contact" 
         method="post"
-        action="/"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
         onSubmit={handleContact}>
