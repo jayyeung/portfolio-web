@@ -65,7 +65,13 @@ class ContactForm extends Component {
     const { handleContact, handleChange } = this;
 
     return (
-      <form id="contact-form" name="contact" onSubmit={handleContact}>
+      <form id="contact-form" 
+        name="contact" 
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleContact}>
+        
         <div className="o-media o-media--res u-mb-28">
           <div className="o-media__fluid u-mr-40 u-mb-20">
             <label>Name*</label>
