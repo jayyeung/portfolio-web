@@ -38,14 +38,14 @@ class ContactForm extends Component {
   handleContact = (e) => {
     e.preventDefault();
     const formName = e.target.name;
-    const { messageSent, sending } = this.state;
+    const { messageSent, sending, form } = this.state;
     if (messageSent || sending) return;
     
     this.setState({sending: true});
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': formName, ...this.state }),
+      body: encode({ 'form-name': formName, ...form }),
     })
     .then((res) => {
       console.log(res);
@@ -59,7 +59,10 @@ class ContactForm extends Component {
     .catch((err) => alert(err));
   }
 
-  handleChange = (e) => { this.setState({ [e.target.name]: e.target.value }); }
+  handleChange = (e) => { 
+    const form = this.state.form;
+    this.setState({ form: {...form, [e.target.name]: e.target.value}}); 
+  }
 
   render() {
     const { name, email, message, messageSent } = this.state;
@@ -70,7 +73,7 @@ class ContactForm extends Component {
         name="contact" 
         method="post"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        
         onSubmit={handleContact}>
 
         <div className="o-media o-media--res u-mb-28">
