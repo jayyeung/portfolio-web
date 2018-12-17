@@ -10,11 +10,11 @@
 .p-homepage__pic {
     @extend .o-container, .o-container--wide;
     margin: -2.4rem auto -2.8rem;
-    background: red;
+    background: color-get(gray);
 
     height: 20rem;
-    @include iota-breakpoint(sm) { height: 25rem; }
-    @include iota-breakpoint(md) { height: 30rem; }
+    @include iota-breakpoint(sm) { height: 30rem; }
+    @include iota-breakpoint(md) { height: 35rem; }
     @include iota-breakpoint(lg) { height: 40rem; }
     @include iota-breakpoint(xl) { height: 45rem; }
 }
@@ -99,7 +99,7 @@
         display: flex;
         flex-direction: column;
         height: 100%;
-        border: 1px solid transparent;
+        border: 1px solid color-get(gray, light);
         background: color-get(element, card);
         img { width: 100%; }
 
