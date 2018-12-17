@@ -65,9 +65,11 @@ const IndexPage = ({ data }) => {
           </div>
 
           <div className="o-grid__col u-5/12@md">
-            <span className="c-label c-label--alt u-inline-block u-mb-24">
+            <span className="c-label u-inline-block">
               Development
             </span>
+
+            <hr className="u-bgcolor-gray u-mt-16 u-mb-24"/>
 
             <ul className="p-homepage__list u-mb-40">
               <li className="u-mb">
@@ -89,9 +91,12 @@ const IndexPage = ({ data }) => {
               </li>
             </ul>
 
-            <span className="c-label c-label--alt u-inline-block u-mb-20">
+            <span className="c-label u-inline-block">
               Design
             </span>
+
+            <hr className="u-bgcolor-gray u-mt-16 u-mb-24"/>
+
             <ul className="p-homepage__list p-homepage__list-sub">
               <li>Adobe XD</li>
               <li>Photoshop</li>
@@ -121,7 +126,7 @@ const IndexPage = ({ data }) => {
           <div className="o-grid">
             {studies.map(({ node }) => (
               <WorkItem data={node.frontmatter} to={node.fields.slug}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio temporibus veritatis harum, eum beatae iure?
+                {node.frontmatter.summary}
               </WorkItem>
             ))}
           </div>
@@ -159,12 +164,14 @@ const WorkItem = ({ children, data, to }) => (
 
 export const studiesQuery = graphql`
   query {
-    allMarkdownRemark(filter: {frontmatter: {published: {eq: true}}}) {
+    allMarkdownRemark(sort: {fields: frontmatter___order}, 
+      filter: {frontmatter: {published: {eq: true}}}) {
       edges {
         node {
           fields { slug }
           frontmatter {
             title,
+            summary,
             thumbnail,
             project_type,
             project_link,
