@@ -1,5 +1,7 @@
 ---
 published: true
+order: 0
+
 title: Love Fluffy
 thumbnail: /content/assets/fluffy-thumbnail.png
 project_demo: /content/assets/fluffy-demo.mp4
@@ -25,9 +27,7 @@ As someone who had self-taught design, creating icons and logos using Inkscape &
 ### Wait, what are SVGs?
 Scalable Vector Graphics (SVGs) are just another type of image format. 
 
-Normally images use raster graphics — that is, blocks of colour (pixels) stacked one on top of each other to create the image. The problem with using rasters is that every image will only have a fixed amount of pixels. By scaling an image, you are also scaling the indivual pixels which cause blurriness. 
-
-The solution to this is by adding more pixels to the image, however, it is impossible once you create the image.
+Normally images use raster graphics — that is, blocks of colour (pixels) stacked one on top of each other to create the image. The problem with using rasters is that every image will only have a fixed amount of pixels. By scaling an image, you are also scaling the indivual pixels  causing blurriness. 
 
 <figure>
   <img src='/content/assets/fluffy-zoomed.png' alt='SVG & Raster comparison'/>
@@ -36,7 +36,7 @@ The solution to this is by adding more pixels to the image, however, it is impos
 
 Using SVGs solves this by **being able to resize itself without losing quality**.
 
-Think about SVGs like this: instead of images being made of pixels, SVGs are **mathematical formulas that calculate an image** and **recalculate when you resize them**. If you actually open a file using a text editor, you can see these "mathematical formulas" in action.
+Think about SVGs like this: instead of pixels, SVGs are **mathematical formulas that calculate an image** and **recalculate when you resize them**. If you actually open a file using a text editor, you can see these "mathematical formulas" in action.
 
 ```html
 <svg>
@@ -48,13 +48,13 @@ In reality, these are actually HTML compliant elements that you can plop into yo
 
 Using a vector editor, [Inkscape](http://Inkscape.com), I first create Fluffy then split and export into several parts: hands, tail, head, eyes... This is done to animate each limb independently later on.
 
-### Animating Fluffy
+### Some interesting things
 
 While animating Fluffy, I decided to use a JavaScript animation library [GSAP](https://greensock.com/gsap). Why? Because it provides more functionality than CSS animations.
 
 One issue is that it is next to impossible knowing when an animation's started or finished without keeping track of time.
 
-For example, I wanted Fluffy to look in the direction of the heart.
+Here's an example: I wanted Fluffy to look in the direction of the heart.
 
   <figure>
     <img src='/content/assets/fluffy-look.gif' alt='Fluffy Eye Tracking'/>
@@ -63,12 +63,18 @@ For example, I wanted Fluffy to look in the direction of the heart.
 
 Here, the animation depends on the distance and location of the heart, which would be impossible with CSS animations.
 
+
 another problem is that there is no easy way to chain sequences of animations unless you keep track of the timing for each sequence by hand. 
+
+  <figure>
+    <img src='/content/assets/fluffy-look.gif' alt='Fluffy Eye Tracking'/>
+    <figcaption>Eye tracking whenever the cursor holds the heart</figcaption>
+  </figure>
 
 Whenever the user gives the heart to Fluffy, she should be changing emotions while shaking her head. Very difficult to do in CSS animations as you'll have to manually keep track of the timing to toggle each transition.
 
 
-By far the coolest trick I did for Fluffy was the tail-curling animation; this requiresd animating custom SVG attributes which GSAP [lets you do easily.](https://greensock.com/AttrPlugin)
+By far the coolest trick I did for Fluffy was the tail-curling animation.
 
 In particular, this involved using a little trick with `stroke-dasharray`. Stroke-dasharray is a SVG attribute that lets you add dashes to a given path.
 
@@ -79,7 +85,7 @@ In particular, this involved using a little trick with `stroke-dasharray`. Strok
 
 We can take advantage of the white gaps in-between these dashes by widening the space so much that you can only see a single dash. We then create the illusion of a curling tail by offsetting the stroke back and forth using `stroke-dashoffset`.
 
-## Conclusion
+## Reflection
 
 Overall, 
 

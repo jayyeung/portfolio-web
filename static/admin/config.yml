@@ -13,8 +13,9 @@ collections:
     folder: 'static/content/case-studies'
     create: true
     fields:
-      - {label: "Published", name: "published", widget: "boolean", default: false}
+      - {label: 'Published', name: 'published', widget: 'boolean', default: false}
       - {label: 'Title', name: 'title', widget: 'string'}
+      - {label: 'Order', name: 'order', widget: 'number', default: 0, valueType: int}
       - {label: 'Thumbnail', name: 'thumbnail', widget: 'image', default: 'http://placehold.it/400x280'}
       - {label: 'Project Demo', name: 'project_demo', widget: 'file'}
       - {label: 'Project Type', name: 'project_type', widget: 'string'}
