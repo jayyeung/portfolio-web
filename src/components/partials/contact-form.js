@@ -78,14 +78,15 @@ class ContactForm extends Component {
         <div className="o-media o-media--res u-mb-28">
           <input type="hidden" name="form-name" value="contact" />
           <div hidden>
-            <label>Don't fill this out:</label>
-            <input name="bot-field" onChange={handleChange}/>
+            <label id='botField'>Don't fill this out:</label>
+            <input for='botField' name="bot-field" onChange={handleChange}/>
           </div>
 
           <div className="o-media__fluid u-mr-40 u-mb-20">
-            <label>Name*</label>
+            <label id="name">Name*</label>
             <input
               type="text"
+              for="name"
               name="name"
               onChange={handleChange}
               value={name}
@@ -95,9 +96,10 @@ class ContactForm extends Component {
           </div>
 
           <div className="o-media__fluid">
-            <label>E-mail*</label>
+            <label id="email">E-mail*</label>
             <input
               type="email"
+              for="email"
               name="email"
               onChange={handleChange}
               value={email}
@@ -107,8 +109,9 @@ class ContactForm extends Component {
           </div>
         </div>
 
-        <label>Message</label>
+        <label id="mes">Message</label>
         <textarea
+          for="mes"
           name="message"
           onChange={handleChange}
           value={message}
