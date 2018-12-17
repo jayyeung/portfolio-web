@@ -15,7 +15,7 @@ const SocialMediaLinks = () => (
       </a>
     </li>
     <li>
-      <a href='https://www.behance.net/jasonyeungb5bc'
+      <a href='https://www.behance.net/jyeung'
       target='_blank' rel='noopener noreferrer'>
         <span className='c-icon-behance'></span>
       </a>
