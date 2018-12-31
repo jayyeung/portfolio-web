@@ -3,15 +3,15 @@ published: true
 order: 0
 
 title: Disguise Chat App
-thumbnail: /content/assets/fluffy-thumbnail.png
+thumbnail: /content/assets/disguise-thumbnail.png
 project_demo: /content/assets/fluffy-demo.mp4
 project_type: Web App
 project_link: 'https://disguise-chat-app-ttoxhiylpb.now.sh/'
 source: 'https://github.com/jayyeung/disguise-chat-app'
 summary: >-
-  Simple chat app concept that lets you disguise yourself as another person and pretend to be them!
+  Simple chat app made using Vue.js and Meteor.js that lets you disguise yourself as another person and pretend to be them!
 ---
-**A chat app with a twist: you can change who you are talking as. Try it [here](https://disguise-chat-app-ttoxhiylpb.now.sh/). (might take a while to boot up)** 
+**A simple chat app with a twist: you can change who you are talking as. Try it [here](https://disguise-chat-app-ttoxhiylpb.now.sh/). (might take a while to boot up)** 
 
 ## What I've learnt
 
