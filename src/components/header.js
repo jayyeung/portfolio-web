@@ -1,10 +1,11 @@
 import React from 'react'
 
-import { Link } from 'gatsby';
+import Head from './partials/head';
 import Nav from './partials/nav';
 
 const Header = ({ siteTitle }) => (
   <div>
+    <Head />
     <Nav />
   </div>
 )
