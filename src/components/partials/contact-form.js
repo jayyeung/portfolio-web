@@ -125,7 +125,7 @@ class ContactForm extends Component {
           <div className="c-contact-form__success-message">
             <div className="c-contact-form__check"></div>
             <h6 className="u-color-white u-mb-4">Your message has been sent!</h6>
-            <p className="u-color-gray-dark">Thanks for your message! If need be, I will try to reply to you within 24 &ndash; 48 hours, or as soon as possible! Thanks! — Jason</p>
+            <p className="u-color-gray-dark">Thanks for your message! I will try to respond to any necessary replies within 24 &ndash; 48 hours! Sincerely, Jason.</p>
           </div>
         </SuccessMessage>
       </form>

@@ -54,11 +54,15 @@ const IndexPage = ({ data }) => {
             <br />
             <p>
               My eagerness to learn has also led me to discover design, and how something looks and feels is just as important as how it should function. 
-              From there on then, I began learning both design and development. Currently, I am a student studying Computer Science looking to become an apsiring Front-end developer.
+              From there on then, I began learning both design and development. 
             </p>
             <br />
             <p>
-              Feel free to look at some of my work below. In my case studies, I try to document my process, what I learnt, and mistakes/obstacles I faced when tackling a project; hopefully you can learn something from my ramblings! :)
+            Currently, I am a student studying Computer Science looking to become an apsiring Front-end developer. In my spare time, I like to excercise and learn about UI design and UX best practices. 
+            </p>
+            <br />
+            <p>
+              Feel free to look at some of my work below or my social media. In my case studies, I try to document my process, what I learnt, and mistakes/obstacles I faced when tackling a project; hopefully you can learn something from my ramblings! :)
             </p>
             <br />
             <SocialMediaLinks />
