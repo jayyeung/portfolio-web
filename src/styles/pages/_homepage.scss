@@ -9,7 +9,7 @@
 
 .p-homepage__pic {
     @extend .o-container, .o-container--wide;
-    margin: -2.4rem auto -2.8rem;
+    margin: -2.4rem auto -3.2rem;
     background: color-get(gray);
 
     height: 20rem;
@@ -17,6 +17,24 @@
     @include iota-breakpoint(md) { height: 35rem; }
     @include iota-breakpoint(lg) { height: 40rem; }
     @include iota-breakpoint(xl) { height: 45rem; }
+
+    position: relative;
+    z-index: -1;
+    &::before {
+        content: '';
+        background: repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent sp(-8),
+            color-get(element, bg) sp(-8),
+            color-get(element, bg) sp(-16)
+        );
+        height: 3rem;
+        
+        position: absolute;
+        left: 0; right: 0;
+        bottom: 0;
+    }
 }
 
 .p-homepage__title {
@@ -122,6 +140,14 @@
             flex: 1; 
             display: flex; 
             align-items: flex-end;
+        }
+    }
+
+    &-links {
+        flex-wrap: wrap;
+        & > * { 
+            margin-top: sp(-4); 
+            margin-bottom: sp(-4); 
         }
     }
 
