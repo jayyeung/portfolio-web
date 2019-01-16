@@ -12,8 +12,8 @@ const IndexPage = ({ data }) => {
   return (
     <div className='p-homepage'>
       <div className="p-homepage__hero">
-        <div className="o-container o-container--title u-text-center">
-          <h1 className="u-mb-20">
+        <div className="o-container o-container--title">
+          <h1 className="u-text-center u-mb-20">
             Hello there! My name is Jason Yeung and I am an aspiring front-end developer.
             You can learn{' '}
             <ScrollLink to="#about-me" className="c-link">about me</ScrollLink>,{' '}
@@ -38,7 +38,6 @@ const IndexPage = ({ data }) => {
       </div>
 
       <div id="about-me" className="u-inline-block u-mb-20 u-mv-32@md" />
-      <hr />
       <div className="u-inline-block u-mb-20 u-mv-40@sm" />
 
       <div className="o-container">
@@ -58,11 +57,12 @@ const IndexPage = ({ data }) => {
             </p>
             <br />
             <p>
-            Currently, I am a student studying Computer Science looking to become an apsiring Front-end developer. In my spare time, I like to excercise and learn about UI design and UX best practices. 
+              Currently, I am a student studying Computer Science looking to become an apsiring Front-end developer. In my spare time, I like to excercise and learn about UI design and UX best practices. 
             </p>
             <br />
             <p>
-              Feel free to look at some of my work below or my social media. In my case studies, I try to document my process, what I learnt, and mistakes/obstacles I faced when tackling a project; hopefully you can learn something from my ramblings! :)
+              Feel free to look at some of my work below. In my case studies, I try to document my process, what I learnt, and mistakes/obstacles I faced when tackling a project; hopefully you can learn something from my ramblings! :)
+              Or perhaps you can take a look at some of my designs on Behance or experimental work on Codepen!
             </p>
             <br />
             <SocialMediaLinks />
@@ -79,19 +79,25 @@ const IndexPage = ({ data }) => {
               <li className="u-mb">
                 <span>HTML/CSS</span>
                 <ul className="p-homepage__list-sub">
+                  <li>Pug</li>
                   <li>SCSS</li>
-                  <li>Jade</li>
                   <li>IotaCSS</li>
+                  <li>Bootstrap</li>
                 </ul>
               </li>
               <li>
-                <span>JavaScript</span>
+                <span>JavaScript (ES6)</span>
                 <ul className="p-homepage__list-sub">
-                  <li>React</li>
-                  <li>Vue.js</li>
+                  <li>React (Mobx)</li>
+                  <li>Vue.js (Vuex)</li>
                   <li>JQuery</li>
                   <li>Meteor.js</li>
                 </ul>
+              </li>
+              <li>
+                <span class="u-opacity-50 u-mt-20">
+                  Python, Go, Java, C/C++
+                </span>
               </li>
             </ul>
 

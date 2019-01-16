@@ -10,7 +10,7 @@ const Footer = () => (
 
         <div className='o-grid o-grid--wide'>
           <div className='o-grid__col u-5/12@md u-mb-40'>
-            <p className='u-color-gray-dark'><span className='u-color-gray'>Thanks for checking out my website!</span> Looks like you've hit the bottom of the page. If you <span className='u-color-gray'>have any concerns, feedback or JUST wanted to say hi,</span> feel free to contact me using my e-mail below or the contact form on the right! Thanks!</p>
+            <p className='u-color-gray-dark'><span className='u-color-gray'>Thanks for checking out my website!</span> Looks like you've hit the bottom of the page. If you <span className='u-color-gray'>have any concerns, feedback or just wanted to say hi,</span> feel free to contact me using my e-mail below or the contact form on the right! Thanks!</p>
             <div className='u-inline-block u-mv-32'></div>
             <div className='u-color-gray c-label'>E-mail me at</div>
             <a href='mailto:contact@jasonyeung.me' className='c-link u-color-white'><h4 className='c-subhead'>contact@jasonyeung.me</h4></a>

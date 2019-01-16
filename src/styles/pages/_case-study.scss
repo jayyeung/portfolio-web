@@ -144,11 +144,17 @@
         li::before {
             content: '';
             display: inline-block;
-            position: absolute;
-            left: -#{sp(-24)}; top: sp(-8);
+            margin-right: sp(-16);
+
+
             border-color: transparent color-get(brand, main);  
             border-style: solid;  
-            border-width: 0.4em 0 0.4em 0.4em;  
+            border-width: 0.3em 0 0.3em 0.3em;  
+
+            @include iota-breakpoint(sm) {
+                position: absolute;
+                left: -#{sp(-24)}; top: sp(-8);
+            }
         }
     }
 }

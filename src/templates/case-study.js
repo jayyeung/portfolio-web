@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, graphql } from 'gatsby';
+import Helmet from 'react-helmet';
 import posed from 'react-pose';
 
 import ScrollLink from '../components/partials/scroll-link';
@@ -55,6 +56,8 @@ class CaseStudy extends Component {
 
     return (
       <Study className="p-case-study">
+        <Helmet title={`Jason Yeung — ${frontmatter.title}`} />
+
         {/* CONTENT NAV */}
         <nav className="p-case-study__nav p-case-study__nav--hidden p-case-study__nav--down"
           ref={(e) => { this.nav = e }}>
