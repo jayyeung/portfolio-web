@@ -34,4 +34,14 @@ a {
     color: inherit;
 }
 
+blockquote {
+    padding: sp(-20) sp(-32);
+    font-family: $font-support-2;
+    font-weight: 500;
+
+    color: color-get(element, heading);
+    background: color-get(gray, light);
+    border-left: $baseline solid color-get(brand, main);
+}
+
 strong { color: color-get(black); }

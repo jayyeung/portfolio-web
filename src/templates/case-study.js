@@ -96,6 +96,7 @@ class CaseStudy extends Component {
         </div>
 
         {/* DEMO */}
+        { (frontmatter.project_demo) ? (
         <div
           className="o-container u-text-center"
           ref={(e) => { this.trigger = e }}>
@@ -112,6 +113,7 @@ class CaseStudy extends Component {
             </div>
           </div>
         </div>
+        ) : '' }
 
         {/* CONTENT */}
         <div className="p-case-study__content u-mt-20"
