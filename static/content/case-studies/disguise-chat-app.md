@@ -4,7 +4,7 @@ order: 0
 
 title: Disguise Chat App
 thumbnail: /content/assets/disguise-thumbnail.png
-project_demo: /content/assets/fluffy-demo.mp4
+project_demo: 
 project_type: Web App
 project_link: 'https://disguise-chat-app-ttoxhiylpb.now.sh/'
 source: 'https://github.com/jayyeung/disguise-chat-app'
@@ -32,7 +32,7 @@ Overall, I learnt a lot through all the stumbles I went through to make it. The 
 
 **Creating temporary users was surprisingly difficult.** At first, I wanted the user to register before trying the app, but since it was only a concept, I wanted the program to automatically create a temporary user, then delete it after a while.
 
-How hard could it be? ...much harder than I expected. Meteor includes an official accounts package that you can implement in your app. However, there are no options to let you simply create a user using its UI.  In the end, **I had to dig *real* deep into the source code to [find a method]() that's not even documented on the site to get it to work.**
+How hard could it be? ...much harder than I expected. Meteor includes an official accounts package that you can implement in your app. However, there are no options to let you simply create a user using its UI.  In the end, **I had to dig *real* deep into the source code to [find a method]() that's not even documented on the site to get it to work.** Very painful :(.
 
 **A lot of the dependencies are unmaintained or outdated**. Meteor seemed to be very popular around the 2015, where the time 
 

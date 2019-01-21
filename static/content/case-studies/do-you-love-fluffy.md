@@ -76,7 +76,7 @@ In particular, I wanted Fluffy to look in the direction of the heart when a user
 
 
 - For distance (magnitude), we simply subtract the point where the heart is with the center of Fluffy's eyes.
-- We then use simple trigonometry to figure the angle to rotate the eye balls only if it's close enough.
+- We then use simple trigonometry to figure the angle to rotate the eye balls if it's close enough.
 
 
 Something I also felt intrigued to do was this tail-curling animation I saw on this [Dribble post](). 
@@ -85,7 +85,7 @@ Something I also felt intrigued to do was this tail-curling animation I saw on t
     <img src='/content/assets/fluffy-wag.gif' alt='Fluffy Wagging'/>
   </figure> 
 
-It took me a while, but I found a solution using a little trick with `stroke-dasharray`. Stroke-dasharray is a SVG attribute that lets you add dashes to a given path.
+It took me a while, but I figured out a solution using a little trick with `stroke-dasharray`. Stroke-dasharray is a SVG attribute that lets you add dashes to a given path.
 
   <figure>
     <img src='/content/assets/fluffy-tail-impl.png' alt='Fluffy Tail Implmentation Example'/>

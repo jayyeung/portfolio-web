@@ -30,9 +30,8 @@ const IndexPage = ({ data }) => {
           <h1>Jason Yeung</h1>
           <h6 className="c-subhead">Front-End Developer</h6>
           <p className="u-mt-12">
-            Currently a student studying
-            Computer Science at <a href="https://www.sfu.ca/">Simon Fraser University</a> in BC,
-            Canada. 
+            4th year student studying
+            Computer Science.
           </p>
         </div>
       </div>
@@ -43,26 +42,32 @@ const IndexPage = ({ data }) => {
       <div className="o-container">
         <div className="o-grid o-grid--wide">
           <div className="o-grid__col u-7/12@md u-mb-40">
-            <h5 className="u-mb-12">A little more about me</h5>
+            <h5 className="u-mb-16">A little more about me</h5>
             <p>Thanks for checking out my portfolio!</p>
             <br />
             <p>
-              <strong>I am passionate about the web.</strong> Ever since highschool, I've been learning web development starting from simple HTML & CSS to using
-              to learning JavaScript frameworks like React and Vue.
+              <strong>I am passionate about the web.</strong> Ever since highschool, I've been learning web development starting from simple HTML & JQuery to JavaScript libraries like React and Vue on web apps.
             </p>
             <br />
             <p>
-              My eagerness to learn has also led me to discover design, and how something looks and feels is just as important as how it should function. 
-              From there on then, I began learning both design and development. 
+              <strong>My eagerness to learn has also led me to discover design,</strong> and how something looks and feels is just as important as how it should function. 
+              Since then, I began learning both design and development.
             </p>
             <br />
             <p>
-              Currently, I am a student studying Computer Science looking to become an apsiring Front-end developer. In my spare time, I like to excercise and learn about UI design and UX best practices. 
+              Currently, I am a Computer Science student at <a href="https://www.sfu.ca/">Simon Fraser University</a> in BC, Canada. I am looking to become a Front-end developer.
+            </p>
+            <br />
+            <blockquote>
+              It's always satisfying to create something tangible that everyday people can use, whether it be a website or an application.
+            </blockquote>
+            <br/>
+            <p>
+            <strong>Feel free to look at some of my works below.</strong> I always document some of my process, what I learnt, and mistakes I've faced when tackling a project; hopefully you can learn something from my ramblings! :)
             </p>
             <br />
             <p>
-              Feel free to look at some of my work below. In my case studies, I try to document my process, what I learnt, and mistakes/obstacles I faced when tackling a project; hopefully you can learn something from my ramblings! :)
-              Or perhaps you can take a look at some of my designs on Behance or experimental work on Codepen!
+              <strong>Oh, you can also look at some of my designs on Behance or code experiments on Codepen!</strong>
             </p>
             <br />
             <SocialMediaLinks />
@@ -127,8 +132,8 @@ const IndexPage = ({ data }) => {
       <div id="my-work" className="o-container o-container--content u-text-center">
         <h2 className="u-mb-12">My Work</h2>
         <p className="u-color-black u-mb-60">
-          Below are projects I have been working on. My work consists of
-          personal projects, some useful, others just plain silly.
+          Projects I have been working on. It mainly consists of
+          personal projects, some useful, some plain silly.
         </p>
       </div>
 
