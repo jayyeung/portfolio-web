@@ -14,7 +14,7 @@ summary: >-
 ---
 **The goal is to drag enough hearts to Fluffy (since we all love cats, right?) the given time limit in order to advance onto the next stage. You can give it a try [here](https://jayyeung.github.io/love-fluffy/).**
 
-## What I've learnt
+## What I learnt
 
 If you tried the "game" you might have realized that it is really hard to beat. In fact, **(spoiler alert)** it's impossible. The last heart will refuse to move if you try to drag it. Really, the point of this project was just to learn more about SVG and animation.
 
