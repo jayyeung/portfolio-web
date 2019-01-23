@@ -18,7 +18,7 @@ const IndexPage = ({ data }) => {
             You can learn{' '}
             <ScrollLink to="#about-me" className="c-link">about me</ScrollLink>,{' '}
             <ScrollLink to="#my-work" className="c-link">my work</ScrollLink>, or{' '}
-            <ScrollLink to="#scroll-bottom" className="c-link u-color-gray-dark">contact me</ScrollLink>.
+            <ScrollLink to="#scroll-bottom" className="c-link u-color-gray-dark">contact me</ScrollLink>
           </h1>
         </div>
       </div>
