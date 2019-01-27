@@ -103,7 +103,7 @@ class ContactForm extends Component {
               name="email"
               onChange={handleChange}
               value={email}
-              placeholder="contact@jasonyeung.me"
+              placeholder="your-email@email.com"
               required
             />
           </div>
