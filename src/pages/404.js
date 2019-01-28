@@ -1,11 +1,11 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, withPrefix } from 'gatsby';
 
 const NotFoundPage = () => (
   <div className="p-404">
     <div className="o-container o-container--content u-relative">
       <div className="p-404__num">
-        <img src="/assets/404.svg" alt="404"/>
+        <img src={withPrefix("/assets/404.svg")} alt="404"/>
       </div>
 
       <div className="c-label">Error 404</div>
