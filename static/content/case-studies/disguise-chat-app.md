@@ -4,7 +4,7 @@ order: 0
 
 title: Disguise Chat App
 thumbnail: /content/assets/disguise-thumbnail.png
-project_demo: 
+project_demo: /content/assets/disguise-chat-demo.mp4
 project_type: Web App
 project_link: 'https://disguise-chat-app-hnpssuosqp.now.sh' 
 source: 'https://github.com/jayyeung/disguise-chat-app'
