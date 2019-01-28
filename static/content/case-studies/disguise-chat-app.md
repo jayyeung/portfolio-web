@@ -15,27 +15,33 @@ summary: >-
 
 ## What I learnt
 
-This app was made from a concept design I made for a [DailyUI Challenge](https://www.behance.net/gallery/67654663/Disguise-Chatroom-Concept). For me, I wanted to learn how to create a full-stack app since I had very little experience in the back-end (aside from school projects). I wanted to ease my way into creating one.
+This app was made from a concept design I made for a [DailyUI Challenge](https://www.behance.net/gallery/67654663/Disguise-Chatroom-Concept). For me, I wanted to learn how to create a full-stack app since I had very little experience in the back-end (aside from school projects).
 
 **Working on this project helped me:**
 - Learn how to create real-time applications
 - Integrate Meteor's framework with Vue.js front-end
 - Understand the big picture of what is needed to create a web app
 
-Initially, I didn't want to overwhelm myself with learning something too complex as I wanted to figure out a good workflow for working with design, front and backend together. This led me to a full-stack framework called [Meteor](https://www.meteor.com/).
+Initially, I wanted to figure out a good workflow for working with design, front and backend together without being overwhelmed by different technologies. This led me to a full-stack framework called [Meteor](https://www.meteor.com/).
 
-Meteor is a framework built on Node.js that couples the front-end and back-end together to make it easy to develop web and mobile applications. 
+Meteor is a framework built on Node.js that couples the front-end and back-end together, making it easier to develop dynamic web/mobile applications. 
 
 ## Reflection
 
-Overall, I learnt a lot through all the pain I endured while making it. The point of this project was to understand the big picture of the app. To figure out a better way to work on a project when having to deal with the full stack.
+Overall, I had an educational albeit painful experience. The point of this project was to understand the big picture of the app — to figure a better way to work from wireframe to app.
 
-**Creating temporary users was surprisingly difficult.** At first, I wanted the user to register before trying the app, but since it was only a concept, I wanted the program to automatically create a temporary user, then delete it after a while.
+**Deploying is difficult.** Meteor used to have a command `meteor deploy` that would host a Meteor app for free. Since then, you have to manually host it yourself. 
 
-How hard could it be? ...much harder than I expected. Meteor includes an official accounts package that you can implement in your app. However, there are no options to let you simply create a user using its UI.  In the end, **I had to dig *real* deep into the source code to [find a method]() that's not even documented on the site to get it to work.** It was a very painful process that .
+Initially, I tried using Heroku to deploy but had problems where building the app would always timeout. I eventually found another solution called [Meteor-now](https://github.com/jkrup/meteor-now) that tries to restore the ease to deploy that used to be `meteor deploy` by deploying through another free host.
 
-**A lot of the dependencies are unmaintained or outdated**. Meteor seems to have a lot of community packages, although most of them are unmaintained. 
+The company that hosts these apps made it incompatible with meteor-now so there is no other free alternatives to host other than Heroku. Fortunately, I had deployed my app before the deadline, but it seems that it will be harder to deploy other projects in the future.
+
+**Meteor has a lot of community packages although most of them are unmaintained.** There were times where I had to rely on packages that were 2+ years old or emulate the functionality of a feature myself.
+
+For instance, I wanted every user to have a temporary account that deletes itself without needing to manually create one. This was much harder than expected.
+
+Meteor includes an official [Accounts](https://github.com/meteor/meteor/tree/devel/packages/accounts-base) package but no option to manually create accounts using its API. I had to dig *real* deep to find a [5 year old solution](https://web.archive.org/web/20160913210817/meteorhacks.com/extending-meteor-accounts/) that uses a method not documented in the Accounts package at all. It was a very painful process to get it done.
 
 
-**Deploying was very difficult**. Perhaps apart of this stems from oudated buildpacks used to deploy Meteor projects onto Heroku.
+
 
