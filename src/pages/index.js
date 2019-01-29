@@ -23,6 +23,9 @@ const IndexPage = ({ data }) => {
         </div>
       </div>
 
+      <div className="u-inline-block u-mt-40" />
+      {/* -- Hiding temporarily until I get a proper headshot
+
       <div className="p-homepage__pic"></div>
 
       <div className="p-homepage__title">
@@ -35,6 +38,7 @@ const IndexPage = ({ data }) => {
           </p>
         </div>
       </div>
+      */}
 
       <div id="about-me" className="u-inline-block u-mb-20 u-mv-32@md" />
       <div className="u-inline-block u-mb-20 u-mv-40@sm" />
